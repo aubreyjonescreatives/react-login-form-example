@@ -1,0 +1,284 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  line-height: 1; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+nav ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+/* change colours to suit your needs */
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none; }
+
+/* change colours to suit your needs */
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0; }
+
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS. */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%; }
+
+/* apply a natural box layout model to all elements */
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* -----------------------BODY------------------------------- */
+header, nav, .containerAll, main, footer {
+  font-family: "lato";
+  margin: 0 auto;
+  max-width: 566px; }
+
+nav {
+  background-color: #F09D51; }
+  nav .navText {
+    color: #ffffff;
+    font-size: 24px; }
+
+main {
+  /* ------------------------Column----------------------------- */ }
+  main .m-c-header {
+    margin-top: 50px;
+    font-size: 32px; }
+  main .containerAll {
+    display: flex;
+    flex-wrap: wrap; }
+    main .containerAll .meal-category-card {
+      margin: 20px;
+      border: 1px solid grey;
+      width: 29%; }
+      main .containerAll .meal-category-card figure {
+        width: 100%; }
+        main .containerAll .meal-category-card figure img {
+          width: 80%;
+          display: block;
+          margin: auto;
+          margin-top: 10px; }
+      main .containerAll .meal-category-card .cardInfo {
+        text-align: center;
+        margin: 20px; }
+      main .containerAll .meal-category-card .cardTitle {
+        font-size: 24px; }
+      main .containerAll .meal-category-card .cardText {
+        padding: 5px; }
+  main .row {
+    max-width: 650px; }
+  main .column {
+    -webkit-column-gap: normal;
+    /* Chrome, Safari, Opera */
+    -moz-column-gap: normal;
+    /* Firefox */ }
+  main .sm-1 {
+    width: 8.3333333333%;
+    float: left; }
+  main .sm-2 {
+    width: 16.6666666667%;
+    float: left; }
+  main .sm-3 {
+    width: 25%;
+    float: left; }
+  main .sm-4 {
+    width: 33.3333333333%;
+    float: left; }
+  main .sm-5 {
+    width: 41.6666666667%;
+    float: left; }
+  main .sm-6 {
+    width: 50%;
+    float: left; }
+  main .sm-7 {
+    width: 58.3333333333%;
+    float: left; }
+  main .sm-8 {
+    width: 66.6666666667%;
+    float: left; }
+  main .sm-9 {
+    width: 75%;
+    float: left; }
+  main .sm-10 {
+    width: 83.3333333333%;
+    float: left; }
+  main .sm-11 {
+    width: 91.6666666667%;
+    float: left; }
+  main .sm-12 {
+    width: 100%;
+    float: left; }
+
+/* ------------------------Column----------------------------- */
+.footer-container {
+  text-align: center;
+  border-top: 1px solid #F09D51;
+  padding: 20px; }
+
+@media only screen and (min-width: 600px) {
+  header, nav, .containerAll, main, footer {
+    font-family: "lato";
+    margin: 0 auto;
+    max-width: 1000px; }
+
+  #navWrapper {
+    background-color: #F09D51; }
+
+  main {
+    /* ------------------------Column----------------------------- */ }
+    main .row {
+      max-width: 1024px; }
+    main .column {
+      -webkit-column-gap: normal;
+      /* Chrome, Safari, Opera */
+      -moz-column-gap: normal;
+      /* Firefox */ }
+    main .md-1 {
+      width: 8.3333333333%;
+      float: left; }
+    main .md-2 {
+      width: 16.6666666667%;
+      float: left; }
+    main .md-3 {
+      width: 25%;
+      float: left; }
+    main .md-4 {
+      width: 33.3333333333%;
+      float: left; }
+    main .md-5 {
+      width: 41.6666666667%;
+      float: left; }
+    main .md-6 {
+      width: 50%;
+      float: left; }
+    main .md-7 {
+      width: 58.3333333333%;
+      float: left; }
+    main .md-8 {
+      width: 66.6666666667%;
+      float: left; }
+    main .md-9 {
+      width: 75%;
+      float: left; }
+    main .md-10 {
+      width: 83.3333333333%;
+      float: left; }
+    main .md-11 {
+      width: 91.6666666667%;
+      float: left; }
+    main .md-12 {
+      width: 100%;
+      float: left; } }
+/* end media query */
+@media only screen and (min-width: 1024px) {
+  header, nav, .containerAll, main, footer {
+    font-family: "lato";
+    margin: 0 auto;
+    max-width: 1200px; }
+
+  main {
+    /* ------------------------Column-----------------------------*/ }
+    main .row {
+      max-width: 1200px; }
+    main .column {
+      -webkit-column-gap: normal;
+      /* Chrome, Safari, Opera */
+      -moz-column-gap: normal;
+      /* Firefox */ }
+    main .lg-1 {
+      width: 8.3333333333%;
+      float: left; }
+    main .lg-2 {
+      width: 16.6666666667%;
+      float: left; }
+    main .lg-3 {
+      width: 25%;
+      float: left; }
+    main .lg-4 {
+      width: 33.3333333333%;
+      float: left; }
+    main .lg-5 {
+      width: 41.6666666667%;
+      float: left; }
+    main .lg-6 {
+      width: 50%;
+      float: left; }
+    main .lg-7 {
+      width: 58.3333333333%;
+      float: left; }
+    main .lg-8 {
+      width: 66.6666666667%;
+      float: left; }
+    main .lg-9 {
+      width: 75%;
+      float: left; }
+    main .lg-10 {
+      width: 83.3333333333%;
+      float: left; }
+    main .lg-11 {
+      width: 91.6666666667%;
+      float: left; }
+    main .lg-12 {
+      width: 100%;
+      float: left; } }
+/* end media query */

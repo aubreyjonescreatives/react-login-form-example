@@ -1,0 +1,50 @@
+
+header, nav, .containerAll, main, footer {font-family: "lato"; margin: 0 auto; max-width: 1200px;}
+
+
+
+
+main {
+
+
+
+
+
+
+
+
+  
+    /* ------------------------Column-----------------------------*/ 
+    
+    .row { 
+        max-width: 1200px; 
+        
+      
+      }
+      
+      .column{
+        -webkit-column-gap: normal; /* Chrome, Safari, Opera */
+        -moz-column-gap: normal; /* Firefox */
+        
+       
+      }
+      
+      @for $i from 1 through 12 {
+          $w: ($i / 12) * 100%;
+          .lg-#{$i} {width: $w; float: left;}
+          
+       }    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+}

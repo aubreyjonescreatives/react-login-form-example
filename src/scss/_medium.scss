@@ -1,0 +1,63 @@
+
+header, nav, .containerAll, main, footer {font-family: "lato"; margin: 0 auto; max-width: 1000px;}
+
+
+
+#navWrapper {
+  background-color: $primaryColor; 
+ //  height: 50px; 
+}
+
+
+
+main {
+
+
+
+
+
+
+
+
+
+
+/* ------------------------Column----------------------------- */
+
+
+
+
+
+.row { 
+    max-width: 1024px;
+    
+  
+  }
+  
+  .column{
+    -webkit-column-gap: normal; /* Chrome, Safari, Opera */
+    -moz-column-gap: normal; /* Firefox */
+    
+   
+  }
+  
+  @for $i from 1 through 12 {
+      $w: ($i / 12) * 100%;
+      .md-#{$i} {width: $w; float: left;}
+      
+   }  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
