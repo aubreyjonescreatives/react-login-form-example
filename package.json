@@ -28,7 +28,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "serve": "node src/server.js",
+    "netDev": "npx netlify dev", 
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
