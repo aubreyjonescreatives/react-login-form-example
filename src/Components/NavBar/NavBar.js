@@ -41,6 +41,12 @@ const drawerItemList = () => (
         </ListItemIcon>
         <NavLink to="/" className="navlink-3">Dash n' Dish</NavLink>
       </ListItem>
+      <ListItem button>
+        <ListItemIcon>
+          <MailItem/>
+        </ListItemIcon>
+        <NavLink to="/" className="navlink-3">Meals By Category</NavLink>
+      </ListItem>
 
       <ListItem button>
         <ListItemIcon>
