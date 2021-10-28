@@ -98,6 +98,18 @@ nav {
   nav .navText {
     color: #ffffff;
     font-size: 24px; }
+  nav .navlink-1 {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 24px; }
+  nav .navlink-2 {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0px 15px; }
+
+.navlink-3 {
+  color: #F09D51;
+  text-decoration: none; }
 
 main {
   /* ------------------------Column----------------------------- */ }

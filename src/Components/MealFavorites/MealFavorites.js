@@ -10,7 +10,7 @@ return (
   
   
   <main>
-  <h1 className="m-c-header">Favorite Meals</h1>
+  <h1 className="m-c-header">Favorited Meals</h1>
   
   
   </main>
