@@ -33,7 +33,7 @@ const NavBar = () => {
   // }
 
 const drawerItemList = () => (
-  <Box sx={{width: 250}} role="presentation">
+  <Box sx={{width: 250}} role="presentation" className="drawerMenu">
     <List>
     <ListItem button>
         <ListItemIcon>
@@ -63,7 +63,7 @@ const drawerItemList = () => (
   <nav id="navWrapper">
    
   <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="static" className="appbar">
         <Toolbar>
           <IconButton
             size="large"

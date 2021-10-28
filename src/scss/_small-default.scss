@@ -12,7 +12,11 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%}
 
 header, nav, .containerAll, main, footer {font-family: "lato"; margin: 0 auto; max-width: 566px;}
 
+.appbar div {
+    background-color: $primaryColor; 
 
+
+}
 
 
 
@@ -46,11 +50,19 @@ nav {
 
 }
 
+.drawerMenu {
+    background-color: $primaryColor; 
+}
+
 
 .navlink-3 {
-    color: $primaryColor; 
+    color: $fontColor; 
     text-decoration: none; 
     
+}
+
+.navlink-3:hover {
+    color: $fontColor; 
 }
 
 

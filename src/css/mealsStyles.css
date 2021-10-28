@@ -93,8 +93,11 @@ header, nav, .containerAll, main, footer {
   margin: 0 auto;
   max-width: 566px; }
 
+.appbar div {
+  background-color: #5FAD56; }
+
 nav {
-  background-color: #F09D51; }
+  background-color: #5FAD56; }
   nav .navText {
     color: #ffffff;
     font-size: 24px; }
@@ -107,9 +110,15 @@ nav {
     text-decoration: none;
     padding: 0px 15px; }
 
+.drawerMenu {
+  background-color: #5FAD56; }
+
 .navlink-3 {
-  color: #F09D51;
+  color: #ffffff;
   text-decoration: none; }
+
+.navlink-3:hover {
+  color: #ffffff; }
 
 main {
   /* ------------------------Column----------------------------- */ }
@@ -184,7 +193,7 @@ main {
 /* ------------------------Column----------------------------- */
 .footer-container {
   text-align: center;
-  border-top: 1px solid #F09D51;
+  border-top: 1px solid #5FAD56;
   padding: 20px; }
 
 @media only screen and (min-width: 600px) {
@@ -194,7 +203,7 @@ main {
     max-width: 1000px; }
 
   #navWrapper {
-    background-color: #F09D51; }
+    background-color: #5FAD56; }
 
   main {
     /* ------------------------Column----------------------------- */ }
