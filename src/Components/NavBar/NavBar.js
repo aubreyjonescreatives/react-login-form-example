@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink } from 'react-router-dom'; 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Modal from '@mui/material/Modal'; 
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import LoginForm from '../Login/LoginForm'; 
-import SignUpForm from '../Login/SignUpForm'; 
+//import LoginForm from '../Login/LoginForm'; 
+//import SignUpForm from '../Login/SignUpForm'; 
 
 
 
@@ -17,15 +15,6 @@ import SignUpForm from '../Login/SignUpForm';
 
 
 const NavBar = () => {
-const [open, setOpen] = useState(false)
-const [openSignUp, setOpenSignUp] = useState(false)
-
-const handleOpen = () => setOpen(true)
-const handleClose = () => setOpen(false)
-
-
-const handleOpenSignUp = () => setOpenSignUp(true)
-const handleCloseSignUp = () => setOpenSignUp(false)
 
 
 
@@ -50,19 +39,12 @@ const handleCloseSignUp = () => setOpenSignUp(false)
             The Fancy Chef
           </NavLink>
           </Typography>
-          <Button color="inherit" onClick={handleOpen}>Login</Button>
-          <Button color="inherit" onClick={handleOpenSignUp}>Sign Up</Button>
+            <NavLink to='/loginForm'>Login</NavLink>
+          <NavLink to='/SignUpForm'>Sign Up</NavLink>
         </Toolbar>
       </AppBar>
     </Box>
       </nav>
-      <Modal open={open}>
-      <LoginForm closeHandler={handleClose} />
-      </Modal>
-
-      <Modal open={openSignUp} onClose={handleCloseSignUp}>
-      <SignUpForm />
-      </Modal>
   </>
   );
 }

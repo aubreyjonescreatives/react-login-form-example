@@ -1,7 +1,7 @@
 import { Box, Button, TextField, FormHelperText } from '@mui/material'
 import {Formik} from 'formik'
 import * as Yup from 'yup'
-
+import { useHistory } from 'react-router-dom'
 
 const style = {
     position: 'absolute', 
@@ -18,9 +18,15 @@ const style = {
 
 const LoginForm = (props) => {
 
-const {closeHandler} = props
+//const {closeHandler} = props
 
+const history = useHistory()
 
+const handleClose = () => {
+  history.push('/MealFavorites')
+  console.log("Should close now...")
+
+}
 return (
 
     <Box sx={style}>
@@ -52,7 +58,7 @@ return (
         setErrors({ submit: err.message })
         setSubmitting(false)
     } finally {
-        closeHandler()
+        handleClose()
     }
     }}
     >
