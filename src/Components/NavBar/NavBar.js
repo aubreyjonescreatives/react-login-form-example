@@ -10,11 +10,9 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem'; 
 import ListItemIcon from '@mui/material/ListItemIcon'; 
-//import ListItemText from '@mui/material/ListItemText';
-import MailItem from '@mui/icons-material/Mail';
-
-
-
+import RestaurantIcon from '@mui/icons-material/Restaurant';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 const NavBar = () => {
 
@@ -36,21 +34,21 @@ const drawerItemList = () => (
   <Box sx={{width: 250}} role="presentation" className="drawerMenu">
     <List>
     <ListItem button>
-        <ListItemIcon>
-          <MailItem/>
+        <ListItemIcon sx={{color: "white"}}>
+          <RestaurantIcon/>
         </ListItemIcon>
-        <NavLink to="/" className="navlink-3">Dash n' Dish</NavLink>
+        <NavLink to="/" className="navlink-3">Dash n' Dine</NavLink>
       </ListItem>
       <ListItem button>
-        <ListItemIcon>
-          <MailItem/>
+        <ListItemIcon sx={{color: "white"}}>
+          <MenuBookIcon/>
         </ListItemIcon>
         <NavLink to="/" className="navlink-3">Meals By Category</NavLink>
       </ListItem>
 
       <ListItem button>
-        <ListItemIcon>
-          <MailItem/>
+        <ListItemIcon sx={{color: "white"}}>
+          <FavoriteIcon/>
         </ListItemIcon>
         <NavLink to="/MealFavorites" className="navlink-3">Favorited Meals</NavLink>
       </ListItem>
@@ -77,7 +75,7 @@ const drawerItemList = () => (
           </IconButton>
           <Typography sx={{ flexGrow: 1 }}>
           <NavLink to='/' className="navlink-1">
-            Dash n' Dish
+            Dash n' Dine
           </NavLink>
           </Typography>
             <NavLink to='/loginForm' className="navlink-2">Login</NavLink>

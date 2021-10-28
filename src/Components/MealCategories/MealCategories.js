@@ -11,7 +11,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Button from '@mui/material/Button';
-
+import FavoritePage from '../MealFavorites/MealFavorites'
 
 const style = {
     position: 'absolute',
@@ -111,6 +111,7 @@ const addFavoriteMeal = (category) => {
 
 if (!favoriteMeal.includes(category.idCategory)) {
     setFavoriteMeal((prevState) => [ ...prevState, category.strCategory]) 
+    setFavoriteMeal((prevState) => [ ...prevState, <FavoritePage />]) 
     console.log(`The ${category.strCategory} meal category was added to your favorite Meals`)
 } else {
     setFavoriteMeal(() => {
