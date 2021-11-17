@@ -5,8 +5,8 @@ import axios from 'axios'
 const MealContext = createContext({
 
 meals: [],
+categoryList: [],
 mealList: [],
-
 
 })
 
@@ -14,8 +14,8 @@ mealList: [],
 
 export const MealContextProvider = (props) => {
     const [meals] = useState([])
-    const [mealList, setmealList] = useState([])
-
+    const [categoryList, setcategoryList] = useState([])
+    const [mealList, setMealList] = useState([])
 
 
 
@@ -25,8 +25,10 @@ export const MealContextProvider = (props) => {
         const response = await axios.get(mealsURL)
         const mealCats = await response.data.categories
        // console.log(response.data.categories)
-       setmealList(mealCats)
-       
+       setcategoryList(mealCats)
+       setMealList({...mealCats})
+
+
         } catch (err) {
             console.log(err)
         }
@@ -41,6 +43,7 @@ export const MealContextProvider = (props) => {
     return (
         <MealContext.Provider value={{
         meals, 
+        categoryList,
         mealList,
         }}>
             {props.children}

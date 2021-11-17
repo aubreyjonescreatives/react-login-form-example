@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useHistory } from 'react-router-dom'; 
 import '../../data/meals.json'; 
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
@@ -29,6 +30,14 @@ const ExpandMore = styled((props) => {
 const MealCard = (props) => {
 
   const [favorite, setFavorite] = React.useState(false)
+  const history = useHistory()
+ 
+
+  const handleInfoClick = () => {
+  history.push(`/CategoryMealList/${props.category.strCategory}`)
+
+  }
+
 
 
   const handleFavoriteClick = () => {
@@ -67,7 +76,7 @@ const [expanded, setExpanded] = React.useState(false);
 
 return (
 <>
-<Card sx={{ maxWidth: 345, margin: 2 }}>
+<Card sx={{ maxWidth: 345, margin: 2 }} onClick={handleInfoClick}>
       <CardHeader
         title={props.category.strCategory}
         sx={{ color: '#2A7221', width: "20%", fontsize: "6px"}}
