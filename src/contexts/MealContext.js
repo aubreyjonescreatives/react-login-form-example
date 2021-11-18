@@ -4,30 +4,34 @@ import axios from 'axios'
 
 const MealContext = createContext({
 
-meals: [],
+
 categoryList: [],
 mealList: [],
+allMeals: [],
 
 })
 
 
 
 export const MealContextProvider = (props) => {
-    const [meals] = useState([])
     const [categoryList, setcategoryList] = useState([])
     const [mealList, setMealList] = useState([])
+    const [allMeals, setallMeals] = useState([])
 
 
-
-    const fetchCategories = async () => {
-        const mealsURL = `/.netlify/functions/mealData`
+    const fetchInfo = async () => {
+        const catURL = `/.netlify/functions/infoData?endpoint=categories`
+        const mealURL = `/.netlify/functions/infoData?endpoint=filter`
         try {
-        const response = await axios.get(mealsURL)
-        const mealCats = await response.data.categories
-       // console.log(response.data.categories)
+        const catResponse = await axios.get(catURL)
+        const mealCats = await catResponse.data.categories
+        console.log(mealCats)
+        const mealResponse = await axios.get(mealURL)
+        const themealsList = await mealResponse.data.meals
+        console.log(themealsList)
        setcategoryList(mealCats)
-       setMealList({...mealCats})
-
+       setMealList({themealsList})
+       setallMeals([...mealCats, ...themealsList])
 
         } catch (err) {
             console.log(err)
@@ -35,16 +39,16 @@ export const MealContextProvider = (props) => {
     }
     
         useEffect(() => {
-            fetchCategories()
+            fetchInfo()
         
     }, [])
 
  // call the function
     return (
         <MealContext.Provider value={{
-        meals, 
         categoryList,
         mealList,
+        allMeals, 
         }}>
             {props.children}
         </MealContext.Provider>

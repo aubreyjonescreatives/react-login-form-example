@@ -24,7 +24,7 @@ const App = () => {
   <Switch>
   <Route path="/" exact component={MealCategories} />
   <Route path="/MealFavorites" exact component={MealFavorites} />
-  <Route path="/CategoryMealList" exact component={CategoryMealList} />
+  <Route path="/theMeal/:strdCategory" exact component={CategoryMealList} />
   <Route path="/loginForm" exact component={loginPage} />
   <Route path="/SignUpForm" exact component={SignUpPage} />
   <Route path="*" exact component={PageNotFound} />

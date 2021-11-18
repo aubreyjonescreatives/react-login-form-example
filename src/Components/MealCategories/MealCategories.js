@@ -41,7 +41,7 @@ const [shareFB, setshareFB] = useState(false)
 const [shareT, setshareT] = useState(false)
 const [shareI, setshareI] = useState(false)
 
-const mealData = useMealContext()
+const dataInfo = useMealContext()
 
 
 
@@ -136,7 +136,7 @@ return (
 
 <Container className="containerAll">
   
-{mealData.categoryList.map((category) => {
+{dataInfo.categoryList.map((category) => {
     return (
 
         
