@@ -13,9 +13,11 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-
+import { useIdentityContext } from 'react-netlify-identity-gotrue'
+ 
 const NavBar = () => {
 
+ const identity = useIdentityContext()
   // const history = useHistory()
 
   const [isOpen, setIsOpen] = useState(false)
@@ -84,8 +86,15 @@ const drawerItemList = () => (
             Dash n' Dine
           </NavLink>
           </Typography>
-            <NavLink to='/loginForm' className="navlink-2">Login</NavLink>
+          {identity.provisionalUser && (
+          <NavLink to='/loginForm' className="navlink-2">Login</NavLink>
+          )}
+          {!identity.user && !identity.provisionalUser && (
           <NavLink to='/SignUpForm' className="navlink-2">Sign Up</NavLink>
+          )}
+           {identity.user && (
+             <Button color='inherit' onClick={identity.logout}>Logout</Button>
+           )}
         </Toolbar>
       </AppBar>
     </Box>
