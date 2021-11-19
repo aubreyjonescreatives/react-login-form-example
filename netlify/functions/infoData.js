@@ -1,18 +1,17 @@
 const axios = require('axios')
 
-
+const APIKEY = process.env.MEAL_API_KEY
 
 
 exports.handler = async function (event, context) {
     console.log(event)
     console.log(context) 
     try {
-        const { endpoint } = event.queryStringParameters
+      //  const { querystring } = event.queryStringParameters
        // const { endpoint2 } = event.queryStringParameters
-        const response = await axios.get(`www.themealdb.com/api/json/v1/1/${endpoint}.php`, {
+        const response = await axios.get(`https://www.themealdb.com/api/json/v2/${APIKEY}/latest.php`, {
      //   headers: {'api-key': process.env.MEAL_API_KEY}
     })
-    console.log(response)
     return {
         statusCode: 200, 
         body: JSON.stringify(response.data)

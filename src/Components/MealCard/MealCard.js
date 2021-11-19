@@ -14,6 +14,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import subImage from '../../images/foodimg.png'; 
+import LazyLoad from 'react-lazyload'
+
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -34,7 +36,7 @@ const MealCard = (props) => {
  
 
   const handleInfoClick = () => {
-  history.push(`/CategoryMealList/${props.category.strCategory}`)
+  history.push(`/CategoryMealList/${props.category.strMeal}`)
 
   }
 
@@ -50,9 +52,9 @@ const MealCard = (props) => {
 
 const [expanded, setExpanded] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+  // const handleExpandClick = () => {
+  //   setExpanded(!expanded);
+  // };
 
 
   const [shareMeal, setShareMeal] = React.useState(false); 
@@ -76,18 +78,21 @@ const [expanded, setExpanded] = React.useState(false);
 
 return (
 <>
-<Card sx={{ maxWidth: 345, margin: 2 }} onClick={handleInfoClick}>
+<Card sx={{ width: 345, margin: 2 }}>
       <CardHeader
-        title={props.category.strCategory}
-        sx={{ color: '#2A7221', width: "20%", fontsize: "6px"}}
+        title={props.category.strMeal}
+        sx={{ color: '#2A7221', width: "100%", fontsize: "6px"}}
       />
+      <LazyLoad>
       <CardMedia
         component="img"
         height="194"
-        image={`${props.category.strCategoryThumb}`}
+        image={`${props.category.strMealThumb}`}
         alt={props.category.strCategory}
         onError={handleImageLoadError}
+        onClick={handleInfoClick}
       />
+      </LazyLoad>
       <CardContent>
       </CardContent>
       <CardActions disableSpacing>
@@ -101,23 +106,7 @@ return (
           sx={{ color: shareMeal ? '#E71D36' : '#4C86A8'}}
           />
         </IconButton>
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        > {props.category.strCategory} Description
-          <ExpandMoreIcon />
-        </ExpandMore>
       </CardActions>
-      <Collapse in={expanded} timeout="auto" unmountOnExit>
-        <CardContent>
-          <Typography paragraph>Description:</Typography>
-          <Typography paragraph>
-          {props.category.strCategoryDescription}
-          </Typography>
-        </CardContent>
-      </Collapse>
     </Card>
 
 

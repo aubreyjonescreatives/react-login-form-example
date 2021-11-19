@@ -1,10 +1,11 @@
   
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import {MealContextProvider} from './contexts/MealContext'
-import MealCategories from './Components/MealCategories/MealCategories';
-import MealFavorites from './Components/MealFavorites/MealFavorites'; 
-import CategoryMealList from './Components/CategoryMealList/CategoryMealList'; 
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {MealContextProvider} from './contexts/MealContext';
+import {Box, LinearProgress} from '@mui/material'; 
+//import MealCategories from './Components/MealCategories/MealCategories';
+//import MealFavorites from './Components/MealFavorites/MealFavorites'; 
+//import CategoryMealList from './Components/CategoryMealList/CategoryMealList'; 
 import NavBar from './Components/NavBar/NavBar';
 import Footer from './Components/Footer/Footer'; 
 import loginPage from './Components/Login/LoginForm'; 
@@ -14,6 +15,15 @@ import 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import './css/mealsStyles.css'; 
 
+const LatestMeals = React.lazy(() => import('./Components/LatestMeals/LatestMeals'));
+const MealFavorites = React.lazy(() => import('./Components/MealFavorites/MealFavorites'));
+const MealDetails = React.lazy(() => import('./Components/MealDetails/MealDetails'));
+
+
+const style = {
+ width: '100%'
+}
+
 
 const App = () => {
   return (
@@ -21,14 +31,18 @@ const App = () => {
    <Router>
     <MealContextProvider>
      <NavBar />
+  <Suspense fallback={<Box sx={style}>
+  <LinearProgress />
+    </Box>}>
   <Switch>
-  <Route path="/" exact component={MealCategories} />
+  <Route path="/" exact component={LatestMeals} />
   <Route path="/MealFavorites" exact component={MealFavorites} />
-  <Route path="/theMeal/:strCategory" exact component={CategoryMealList} />
+  <Route path="/theMeal/:idMeal" exact component={MealDetails} />
   <Route path="/loginForm" exact component={loginPage} />
   <Route path="/SignUpForm" exact component={SignUpPage} />
   <Route path="*" exact component={PageNotFound} />
   </Switch>
+  </Suspense>
    <Footer />
    </MealContextProvider>
    </Router>

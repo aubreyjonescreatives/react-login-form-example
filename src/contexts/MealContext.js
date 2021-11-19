@@ -5,7 +5,7 @@ import axios from 'axios'
 const MealContext = createContext({
 
 
-categoryList: [],
+//categoryList: [],
 mealList: [],
 allMeals: [],
 
@@ -14,24 +14,24 @@ allMeals: [],
 
 
 export const MealContextProvider = (props) => {
-    const [categoryList, setcategoryList] = useState([])
-    const [mealList, setMealList] = useState([])
+   // const [categoryList] = useState([])
+    const [mealList] = useState([])
     const [allMeals, setallMeals] = useState([])
 
 
     const fetchInfo = async () => {
-        const catURL = `/.netlify/functions/infoData?endpoint=categories`
-        const mealURL = `/.netlify/functions/infoData?endpoint=filter`
+        const mealsURL = `/.netlify/functions/infoData`
+       // const mealURL = `/.netlify/functions/infoData`
         try {
-        const catResponse = await axios.get(catURL)
-        const mealCats = await catResponse.data.categories
-        console.log(mealCats)
-        const mealResponse = await axios.get(mealURL)
-        const themealsList = await mealResponse.data.meals
-        console.log(themealsList)
-       setcategoryList(mealCats)
-       setMealList({themealsList})
-       setallMeals([...mealCats, ...themealsList])
+        const response = await axios.get(mealsURL)
+        const latestMeals = await response.data.meals
+        console.log(latestMeals)
+      //  const mealResponse = await axios.get(mealURL)
+      //  const themealsList = await mealResponse.data.categories
+      //  console.log(themealsList)
+       setallMeals(latestMeals)
+      // setMealList({themealsList})
+      // setallMeals([...mealCats])
 
         } catch (err) {
             console.log(err)
@@ -46,7 +46,7 @@ export const MealContextProvider = (props) => {
  // call the function
     return (
         <MealContext.Provider value={{
-        categoryList,
+      //  categoryList,
         mealList,
         allMeals, 
         }}>

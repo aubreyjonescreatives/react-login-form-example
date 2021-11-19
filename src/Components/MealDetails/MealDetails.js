@@ -5,19 +5,19 @@ import {useMealContext } from '../../contexts/MealContext';
 
 
 
-const CategoryMealList = () => {
+const MealDetails = () => {
   const params = useParams()
   const meals = useMealContext()
 
 
-    const theMeal = meals.mealList.find(item => item.id === params.strCategory )
+    const theMeal = meals.allMeals.find(item => item.id === params.idMeal )
     console.log(theMeal)
 
     return (
       <>
-    <h1>${theMeal.strCategory} Meals</h1>
+    <h1>${theMeal.strMeal} Info</h1>
       </>
   )
 }
 
-export default CategoryMealList
+export default MealDetails; 

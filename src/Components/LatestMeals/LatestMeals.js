@@ -26,7 +26,7 @@ const style = {
   };
 
 
-const MealCategories = () => {
+const LatestMeals = () => {
 
 
 //const idCategory = ["2", "4"]
@@ -41,7 +41,7 @@ const [shareFB, setshareFB] = useState(false)
 const [shareT, setshareT] = useState(false)
 const [shareI, setshareI] = useState(false)
 
-const dataInfo = useMealContext()
+const foodData = useMealContext()
 
 
 
@@ -131,18 +131,18 @@ return (
 
 
 <main>
-<h1 className="m-c-header">Meals By Category</h1>
+<h1 className="m-c-header">Latest Meals</h1>
 
 
 <Container className="containerAll">
   
-{dataInfo.categoryList.map((category) => {
+{foodData.allMeals.map((category) => {
     return (
 
         
 
         <MealCard
-        key={category.idCategory}
+        key={category.idMeal}
         addFavoriteMealFunction={addFavoriteMeal}
         modalFunction={handleOpen}
         category={{...category}}
@@ -325,4 +325,4 @@ return (
 
 
 
-export default MealCategories; 
+export default LatestMeals; 
