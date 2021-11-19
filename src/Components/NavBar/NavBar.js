@@ -41,9 +41,15 @@ const drawerItemList = () => (
       </ListItem>
       <ListItem button>
         <ListItemIcon sx={{color: "white"}}>
+          <RestaurantIcon/>
+        </ListItemIcon>
+        <NavLink to="/Welcome" className="navlink-3">Welcome</NavLink>
+      </ListItem>
+      <ListItem button>
+        <ListItemIcon sx={{color: "white"}}>
           <MenuBookIcon/>
         </ListItemIcon>
-        <NavLink to="/" className="navlink-3">Latest Meals</NavLink>
+        <NavLink to="/LatestMeals" className="navlink-3">Latest Meals</NavLink>
       </ListItem>
 
       <ListItem button>

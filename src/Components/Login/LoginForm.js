@@ -2,6 +2,7 @@ import { Box, Button, TextField, FormHelperText } from '@mui/material'
 import {Formik} from 'formik'
 import * as Yup from 'yup'
 import { useHistory } from 'react-router-dom'
+import { useIdentityContext } from 'react-netlify-identity-gotrue'
 
 const style = {
     position: 'absolute', 
@@ -20,10 +21,11 @@ const LoginForm = (props) => {
 
 //const {closeHandler} = props
 
+const identity = useIdentityContext()
 const history = useHistory()
 
 const handleClose = () => {
-  history.push('/MealFavorites')
+  history.push('/Welcome')
   console.log("Should close now...")
 
 }
@@ -39,9 +41,6 @@ return (
     }}
     validationSchema={
         Yup.object().shape({
-          username: Yup.string()
-          .min(4)
-          .required('Username is required.'),
           email: Yup.string()
             .email('Must be a valid email.')
             .max(255)
@@ -51,11 +50,18 @@ return (
             .max(25, 'We KNOW your password isn' + 't more than 25 characters long.')
             .required('A password is required.'),
         })}
-    onSubmit={(value, {setErrors, setStatus, setSubmitting}) => {
+    onSubmit={ async (value, {setErrors, setStatus, setSubmitting}) => {
     try {
         console.log('Submit Successful!')
         setStatus({success: true})
         setSubmitting(false)
+        await identity.login({
+          email: value.email, 
+          password: value.password
+        }).then(() => {
+          console.log('Submit Successful!')
+          handleClose()
+        })
     } catch (err) {
         console.error(err)
         setStatus({success: false})
@@ -75,20 +81,6 @@ return (
         touched,
         }) => (
 <form noValidate onSubmit={handleSubmit}>
-<TextField
-  error={Boolean(touched.username && errors.username)}
-  fullWidth
-  helperText={touched.username && errors.username}
-  label="Username"
-  margin="normal" 
-  name="username"
-  type="text"
-  variant="outlined"
-  onBlur={handleBlur}
-  onChange={handleChange}
-  value={values.username}
-  
-  />
   <TextField
   error={Boolean(touched.email && errors.email)}
   fullWidth

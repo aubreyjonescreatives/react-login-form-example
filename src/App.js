@@ -6,6 +6,7 @@ import {Box, LinearProgress} from '@mui/material';
 import NetlifyIdentityContext from 'react-netlify-identity-gotrue'
 import NavBar from './Components/NavBar/NavBar';
 import Footer from './Components/Footer/Footer'; 
+import Welcome from './Components/Welcome/Welcome'
 import loginPage from './Components/Login/LoginForm'; 
 import SignUpPage from './Components/Login/SignUpForm'; 
 import PageNotFound from './Components/NotFound/NotFound.js'; 
@@ -34,7 +35,9 @@ const App = () => {
   <LinearProgress />
     </Box>}>
   <Switch>
-  <Route path="/" exact component={LatestMeals} />
+  <Route path="/" exact component={Welcome} />
+  <Route path="/Welcome" exact component={Welcome} />
+  <Route path="/LatestMeals" exact component={LatestMeals} />
   <Route path="/MealFavorites" exact component={MealFavorites} />
   <Route path="/theMeal/:idMeal" exact component={MealDetails} />
   <Route path="/loginForm" exact component={loginPage} />

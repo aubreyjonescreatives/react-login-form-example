@@ -25,7 +25,7 @@ const identity = useIdentityContext()
 const history = useHistory()
 
 const handleClose = () => {
-  history.push('/MealFavorites')
+  history.push('/Welcome')
   console.log("Should close now...")
 
 }
