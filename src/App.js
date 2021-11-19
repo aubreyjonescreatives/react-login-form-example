@@ -6,7 +6,8 @@ import {Box, LinearProgress} from '@mui/material';
 import NetlifyIdentityContext from 'react-netlify-identity-gotrue'
 import NavBar from './Components/NavBar/NavBar';
 import Footer from './Components/Footer/Footer'; 
-import Welcome from './Components/Welcome/Welcome'
+import Welcome from './Components/Welcome/Welcome'; 
+import LandingPage from './Components/Landing/Landing'; 
 import loginPage from './Components/Login/LoginForm'; 
 import SignUpPage from './Components/Login/SignUpForm'; 
 import PageNotFound from './Components/NotFound/NotFound.js'; 
