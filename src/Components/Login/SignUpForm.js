@@ -25,7 +25,7 @@ const identity = useIdentityContext()
 const history = useHistory()
 
 const handleClose = () => {
-  history.push('/Welcome')
+  history.push('/Confirm')
   console.log("Should close now...")
 
 }
