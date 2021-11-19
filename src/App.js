@@ -35,7 +35,7 @@ const App = () => {
   <LinearProgress />
     </Box>}>
   <Switch>
-  <Route path="/" exact component={Welcome} />
+  <Route path="/" exact component={LandingPage} />
   <Route path="/Welcome" exact component={Welcome} />
   <Route path="/LatestMeals" exact component={LatestMeals} />
   <Route path="/MealFavorites" exact component={MealFavorites} />
