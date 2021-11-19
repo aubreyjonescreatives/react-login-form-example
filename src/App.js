@@ -3,9 +3,7 @@ import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {MealContextProvider} from './contexts/MealContext';
 import {Box, LinearProgress} from '@mui/material'; 
-//import MealCategories from './Components/MealCategories/MealCategories';
-//import MealFavorites from './Components/MealFavorites/MealFavorites'; 
-//import CategoryMealList from './Components/CategoryMealList/CategoryMealList'; 
+import NetlifyIdentityContext from 'react-netlify-identity-gotrue'
 import NavBar from './Components/NavBar/NavBar';
 import Footer from './Components/Footer/Footer'; 
 import loginPage from './Components/Login/LoginForm'; 
@@ -29,6 +27,7 @@ const App = () => {
   return (
    <>
    <Router>
+     <NetlifyIdentityContext url='https://fourth-course-project.netlify.app'>
     <MealContextProvider>
      <NavBar />
   <Suspense fallback={<Box sx={style}>
@@ -45,6 +44,7 @@ const App = () => {
   </Suspense>
    <Footer />
    </MealContextProvider>
+   </NetlifyIdentityContext>
    </Router>
    </>
   );
