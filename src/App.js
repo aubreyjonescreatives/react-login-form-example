@@ -5,7 +5,7 @@ import {MealContextProvider} from './contexts/MealContext';
 import {Box, LinearProgress} from '@mui/material'; 
 import NetlifyIdentityContext from 'react-netlify-identity-gotrue'
 import NavBar from './Components/NavBar/NavBar';
-import Footer from './Components/Footer/Footer'; 
+//import Footer from './Components/Footer/Footer'; 
 import Welcome from './Components/Welcome/Welcome';
 import Confirm from './Components/Login/Confirm'; 
 import LandingPage from './Components/Landing/Landing'; 
@@ -48,7 +48,7 @@ const App = () => {
   <Route path="*" exact component={PageNotFound} />
   </Switch>
   </Suspense>
-   <Footer />
+   //<Footer />
    </MealContextProvider>
    </NetlifyIdentityContext>
    </Router>
