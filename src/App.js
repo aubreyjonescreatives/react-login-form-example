@@ -13,7 +13,7 @@ import loginPage from './Components/Login/LoginForm';
 import SignUpPage from './Components/Login/SignUpForm'; 
 import PageNotFound from './Components/NotFound/NotFound.js'; 
 import 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/mealsStyles.css'; 
 
 const LatestMeals = React.lazy(() => import('./Components/LatestMeals/LatestMeals'));
