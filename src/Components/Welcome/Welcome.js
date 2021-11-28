@@ -1,3 +1,4 @@
+import { Box } from '@mui/material'
 import { useIdentityContext } from 'react-netlify-identity-gotrue'
 
 
