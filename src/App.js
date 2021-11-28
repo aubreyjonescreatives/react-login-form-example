@@ -48,7 +48,6 @@ const App = () => {
   <Route path="*" exact component={PageNotFound} />
   </Switch>
   </Suspense>
-   //<Footer />
    </MealContextProvider>
    </NetlifyIdentityContext>
    </Router>
