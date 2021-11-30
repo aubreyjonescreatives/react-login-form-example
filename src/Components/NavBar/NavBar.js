@@ -87,9 +87,7 @@ const drawerItemList = () => (
             Dash n' Dine
           </NavLink>
           </Typography>
-          {identity.provisionalUser && (
           <NavLink to='/loginForm' className="navlink-2">Login</NavLink>
-          )}
           {!identity.user && !identity.provisionalUser && (
           <NavLink to='/SignUpForm' className="navlink-2">Sign Up</NavLink>
           )}
