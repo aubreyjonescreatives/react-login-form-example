@@ -8,7 +8,7 @@ import {useMealContext } from '../../contexts/MealContext';
 const MealDetails = () => {
   const params = useParams()
   const meals = useMealContext()
-
+ console.log(meals)
 
     const theMeal = meals.allMeals.find(item => item.id === params.idMeal )
     console.log(theMeal)

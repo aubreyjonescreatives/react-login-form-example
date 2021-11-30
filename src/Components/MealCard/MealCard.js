@@ -15,7 +15,7 @@ import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import subImage from '../../images/foodimg.png'; 
 import LazyLoad from 'react-lazyload'
-
+import InfoIcon from '@mui/icons-material/Info';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -33,10 +33,10 @@ const MealCard = (props) => {
 
   const [favorite, setFavorite] = React.useState(false)
   const history = useHistory()
- 
+
 
   const handleInfoClick = () => {
-  history.push(`/CategoryMealList/${props.category.strMeal}`)
+  history.push(`/meals/${props.category.idMeal}`)
 
   }
 
@@ -90,7 +90,6 @@ return (
         image={`${props.category.strMealThumb}`}
         alt={props.category.strCategory}
         onError={handleImageLoadError}
-        onClick={handleInfoClick}
       />
       </LazyLoad>
       <CardContent>
@@ -106,6 +105,15 @@ return (
           sx={{ color: shareMeal ? '#E71D36' : '#4C86A8'}}
           />
         </IconButton>
+        <IconButton aria-label="share" onClick={handleInfoClick}>
+          <InfoIcon 
+          sx={{ color: shareMeal ? '#E71D36' : '#4C86A8'}}
+          />
+        </IconButton>
+    
+
+
+
       </CardActions>
     </Card>
 
