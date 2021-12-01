@@ -1,21 +1,26 @@
-import React from 'react'; 
+import * as React from 'react'; 
 import { useParams } from 'react-router-dom'; 
 import {useMealContext } from '../../contexts/MealContext';
-
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
 
 
 
 const MealDetails = () => {
   const params = useParams()
   const meals = useMealContext()
- console.log(meals)
+  console.log(meals)
 
-    const theMeal = meals.allMeals.find(item => item.id === params.idMeal )
+    const theMeal = meals.mealList.find(item => item.id === params.idMeal )
     console.log(theMeal)
+    console.log(meals.mealList.idMeal)
 
     return (
       <>
-    <h1>${theMeal.strMeal} Info</h1>
+  <h1>{meals.mealList.strMeal} Info</h1>
       </>
   )
 }

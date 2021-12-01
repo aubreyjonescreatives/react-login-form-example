@@ -136,7 +136,7 @@ return (
 
 <Container className="containerAll">
   
-{foodData.allMeals.map((category) => {
+{foodData.mealList.map((category) => {
     return (
 
         

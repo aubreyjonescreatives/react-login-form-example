@@ -42,7 +42,7 @@ const App = () => {
   <Route path="/Confirm" exact component={Confirm} />
   <Route path="/LatestMeals" exact component={LatestMeals} />
   <Route path="/MealFavorites" exact component={MealFavorites} />
-  <Route path="/theMeal/:idMeal" exact component={MealDetails} />
+  <Route path="/meals/:idMeal" exact component={MealDetails} />
   <Route path="/loginForm" exact component={loginPage} />
   <Route path="/SignUpForm" exact component={SignUpPage} />
   <Route path="*" exact component={PageNotFound} />
