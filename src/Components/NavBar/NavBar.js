@@ -1,5 +1,6 @@
 import React, { useState } from 'react'; 
-import { NavLink, useHistory } from 'react-router-dom'; 
+import { NavLink, useHistory } from 'react-router-dom';
+import {Tooltip} from '@mui/material' 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -91,14 +92,24 @@ const drawerItemList = () => (
           >
             <MenuIcon />
           </IconButton>
-          <Typography sx={{ flexGrow: 1 }}>
-          <NavLink to='/' className="navlink-1">
+          <Typography sx={{ flexGrow: 3, width: '200px' }}>
+          <NavLink to='/' className="navlink-1"  >
             Dash n' Dine
           </NavLink>
           </Typography>
+          {identity.user && (
+      <ListItem sx={{justifyContent: 'flex-end', flexGrow: 1}} button >
+        <ListItemIcon sx={{color: "white"}}>
+          <AccountCircleIcon/>
+        </ListItemIcon>
+        <NavLink to="/Welcome" className="navlink-3">Hi {identity.user?.user_metadata?.full_name}</NavLink>
+      </ListItem>
+      )}
         </Toolbar>
+        
       </AppBar>
     </Box>
+    
       </nav>
       <Drawer anchor="left" open={isOpen} onClose={toggleDrawer}>
       {drawerItemList()}

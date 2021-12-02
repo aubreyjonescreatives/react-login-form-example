@@ -11,7 +11,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Button from '@mui/material/Button';
-import FavoritePage from '../MealFavorites/MealFavorites'
+//import WelcomeSignedIn from '../../Components/Welcome/WelcomeSignedIn'
 
 const style = {
     position: 'absolute',
@@ -111,7 +111,7 @@ const addFavoriteMeal = (category) => {
 
 if (!favoriteMeal.includes(category.idCategory)) {
     setFavoriteMeal((prevState) => [ ...prevState, category.strCategory]) 
-    setFavoriteMeal((prevState) => [ ...prevState, <FavoritePage />]) 
+ //   setFavoriteMeal((prevState) => [ ...prevState, <WelcomeSignedIn />]) 
     console.log(`The ${category.strCategory} meal category was added to your favorite Meals`)
 } else {
     setFavoriteMeal(() => {
@@ -225,93 +225,7 @@ return (
 
 
 
-<h1 className="m-c-header">Favorited Meals</h1>
 
-
-{favoriteMeal && favoriteMeal.map((category) => {
-      return (
-           
-
-        <MealCard
-        key={category.idCategory}
-        addFavoriteMealFunction={addFavoriteMeal}
-        modalFunction={handleOpen}
-        category={{...category}}
-        // id={mCategories.id}
-        // strCategoryThumb={mCategories.strCategoryThumb}
-        // strCategory={mCategories.strCategory} 
-        // strCategoryDescription={mCategories.strCategoryDescription}
-        />
-
-    )
-    
-})}
- <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-        <Typography id="modal-modal-title" variant="h6" component="h2">
-           Say Something About This Meal: 
-          </Typography>
-          <TextareaAutosize
-          display="block"
-          margin={0}
-      aria-label="minimum height"
-      minRows={3}
-      placeholder="This meal..."
-      style={{ width: '100%' }}
-      
-    />
-        <Typography id="modal-modal-title" variant="h6" component="h2">
-            Ways to Share:
-          </Typography>
-        <IconButton aria-label="settings"
-       
-        
-        
-        >
-            <FacebookIcon
-            sx={{ fontSize: 42, 
-            color: shareFB ? '$primaryColor' : '$secondaryColor'
-            }}
-            onClick={handleshareSocialClickFB}
-            
-            
-            />
-          </IconButton>
-          <IconButton aria-label="settings">
-            <TwitterIcon 
-             onClick={handleshareSocialClickT}
-            sx={{ fontSize: 42, 
-            color: shareT ? '$primaryColor' : '#4C86A8'
-            
-            }}
-            />
-          </IconButton>
-          <IconButton aria-label="settings">
-            <InstagramIcon 
-            sx={{ fontSize: 42, 
-                color: shareI ? '$primaryColor' : '#4C86A8'
-                }}
-                onClick={handleshareSocialClickI}
-            
-            />
-          </IconButton>
-          <Button
-         sx={{ fontSize: 24, 
-            color: 'white', 
-            bgcolor: '$primaryColor'
-            }}
-            onClick={handlesocialSubmit}
-          
-        >Share</Button>
-        </Box>
-       
-      </Modal>
-  
   
 
 
