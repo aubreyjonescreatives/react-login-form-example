@@ -73,7 +73,6 @@ const Landing = () => {
       <Card sx={{ display: 'block', margin: '0 auto', height: '800px'}}>
       <CardMedia
         component="img"
-        image={}
         alt="Meal of the Day"
       />
    
