@@ -15,7 +15,9 @@ import RestaurantIcon from '@mui/icons-material/Restaurant';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useIdentityContext } from 'react-netlify-identity-gotrue'
- 
+import LogoutIcon from '@mui/icons-material/Logout';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+
 const NavBar = () => {
 
  const identity = useIdentityContext()
@@ -42,25 +44,32 @@ const drawerItemList = () => (
         </ListItemIcon>
         <NavLink to="/" className="navlink-3">Dash n' Dine</NavLink>
       </ListItem>
+      {identity.user && (
       <ListItem button>
         <ListItemIcon sx={{color: "white"}}>
-          <RestaurantIcon/>
+          <AccountCircleIcon/>
         </ListItemIcon>
-        <NavLink to="/Welcome" className="navlink-3">Welcome</NavLink>
+        <NavLink to="/Welcome" className="navlink-3">Hi {identity.user?.user_metadata?.full_name}</NavLink>
       </ListItem>
+      )}
+       {identity.user && (
       <ListItem button>
         <ListItemIcon sx={{color: "white"}}>
           <MenuBookIcon/>
         </ListItemIcon>
         <NavLink to="/LatestMeals" className="navlink-3">Latest Meals</NavLink>
       </ListItem>
-
-      <ListItem button>
-        <ListItemIcon sx={{color: "white"}}>
-          <FavoriteIcon/>
-        </ListItemIcon>
-        <NavLink to="/MealFavorites" className="navlink-3">Favorited Meals</NavLink>
-      </ListItem>
+ )}
+  {identity.user && (
+     <ListItem button  onClick={identity.logout}>
+     <ListItemIcon sx={{color: "white"}}>
+       <LogoutIcon/>
+     </ListItemIcon>
+     <NavLink to="/" className="navlink-3" >Logout</NavLink>
+   </ListItem>
+            
+           )}
+    
     </List>
   </Box>
 )
@@ -87,15 +96,6 @@ const drawerItemList = () => (
             Dash n' Dine
           </NavLink>
           </Typography>
-          {!identity.user && (
-          <NavLink to='/loginForm' className="navlink-2">Login</NavLink>
-          )}
-          {!identity.user && !identity.provisionalUser && (
-          <NavLink to='/SignUpForm' className="navlink-2">Sign Up</NavLink>
-          )}
-           {identity.user && (
-             <Button color='inherit' onClick={identity.logout}>Logout</Button>
-           )}
         </Toolbar>
       </AppBar>
     </Box>

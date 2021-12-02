@@ -20,7 +20,7 @@ const MealDetails = () => {
 
     return (
       <>
-  <h1>{meals.mealList.strMeal} Info</h1>
+  <Typography> Info</Typography>
       </>
   )
 }
