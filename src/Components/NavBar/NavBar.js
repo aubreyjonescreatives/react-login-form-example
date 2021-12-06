@@ -18,6 +18,10 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useIdentityContext } from 'react-netlify-identity-gotrue'
 import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+
+
 
 const NavBar = () => {
 
@@ -48,9 +52,9 @@ const drawerItemList = () => (
       {identity.user && (
       <ListItem button>
         <ListItemIcon sx={{color: "white"}}>
-          <AccountCircleIcon/>
+        <Avatar sx={{width: 30, height: 30}}>{identity.user?.user_metadata?.full_name.slice(0, 1)}</Avatar>
         </ListItemIcon>
-        <NavLink to="/Welcome" className="navlink-3">Hi {identity.user?.user_metadata?.full_name}</NavLink>
+        <NavLink to="/Welcome" className="navlink-3">Hi, {identity.user?.user_metadata?.full_name}</NavLink>
       </ListItem>
       )}
        {identity.user && (
@@ -100,9 +104,9 @@ const drawerItemList = () => (
           {identity.user && (
       <ListItem sx={{justifyContent: 'flex-end', flexGrow: 1}} button >
         <ListItemIcon sx={{color: "white"}}>
-          <AccountCircleIcon/>
+      <Avatar sx={{width: 30, height: 30, backgroundColor: '#ccc'}}>{identity.user?.user_metadata?.full_name.slice(0, 1)}</Avatar>
         </ListItemIcon>
-        <NavLink to="/Welcome" className="navlink-3">Hi {identity.user?.user_metadata?.full_name}</NavLink>
+        <NavLink to="/Welcome" className="navlink-3">Hi, {identity.user?.user_metadata?.full_name}</NavLink>
       </ListItem>
       )}
         </Toolbar>

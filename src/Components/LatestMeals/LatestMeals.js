@@ -109,18 +109,19 @@ const handlesocialSubmit = () => {
 
 const addFavoriteMeal = (category) => {
 
-if (!favoriteMeal.includes(category.idCategory)) {
+if (!favoriteMeal.includes(category.idMeal)) {
     setFavoriteMeal((prevState) => [ ...prevState, category.strCategory]) 
- //   setFavoriteMeal((prevState) => [ ...prevState, <WelcomeSignedIn />]) 
+   
+    //   setFavoriteMeal((prevState) => [ ...prevState, <WelcomeSignedIn />]) 
     console.log(`The ${category.strCategory} meal category was added to your favorite Meals`)
 } else {
     setFavoriteMeal(() => {
         console.log(`The ${category.strCategory} meal category was removed from your favorite Meals`)
-        return favoriteMeal.filter((item) => item !== category.idCategory)
+        return favoriteMeal.filter((item) => item !== category.idMeal)
        
     })
 }
-
+foodData.yourfavoriteMeal = favoriteMeal
 }
 
  

@@ -8,6 +8,7 @@ const MealContext = createContext({
 //categoryList: [],
 mealList: [],
 allMeals: [],
+yourfavoriteMeals: [], 
 
 
 })
@@ -18,7 +19,7 @@ export const MealContextProvider = (props) => {
    // const [categoryList] = useState([])
     const [mealList, setMealList] = useState([])
     const [allMeals, setallMeals] = useState([])
-   
+    const [yourfavoriteMeals] = useState([])
 
     const fetchInfo = async () => {
         const mealsURL = `/.netlify/functions/infoData`
@@ -28,7 +29,6 @@ export const MealContextProvider = (props) => {
         console.log(latestMeals)
        setMealList(latestMeals)
        setallMeals([...latestMeals])
- 
         } catch (err) {
             console.log(err)
         }
@@ -44,6 +44,7 @@ export const MealContextProvider = (props) => {
         <MealContext.Provider value={{
         mealList,
         allMeals,
+        yourfavoriteMeals,
         }}>
             {props.children}
         </MealContext.Provider>
