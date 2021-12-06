@@ -21,7 +21,7 @@ import InfoIcon from '@mui/icons-material/Info';
 
 const cardStyles = {
   width: 345, 
-  margin: 2, 
+  margin: 2 
 //  transform: translate3D('0, -1px, 0') scale('1.03') 
 
 
@@ -77,7 +77,7 @@ const MealCard = (props) => {
 
 return (
 <>
-<Card sx={{ cardStyles }}>
+<Card sx={ cardStyles }>
       <CardHeader
         title={props.category.strMeal}
         sx={{ color: '#2A7221', width: "100%", fontsize: "6px"}}
