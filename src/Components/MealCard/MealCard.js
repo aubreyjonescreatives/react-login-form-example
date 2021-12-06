@@ -17,16 +17,16 @@ import subImage from '../../images/foodimg.png';
 import LazyLoad from 'react-lazyload'
 import InfoIcon from '@mui/icons-material/Info';
 
-const ExpandMore = styled((props) => {
-  const { expand, ...other } = props;
-  return <IconButton {...other} />;
-})(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+
+
+const cardStyles = {
+  width: 345, 
+  margin: 2, 
+//  transform: translate3D('0, -1px, 0') scale('1.03') 
+
+
+
+}
 
 
 const MealCard = (props) => {
@@ -50,7 +50,6 @@ const MealCard = (props) => {
   }
   
 
-const [expanded, setExpanded] = React.useState(false);
 
   // const handleExpandClick = () => {
   //   setExpanded(!expanded);
@@ -78,7 +77,7 @@ const [expanded, setExpanded] = React.useState(false);
 
 return (
 <>
-<Card sx={{ width: 345, margin: 2 }}>
+<Card sx={{ cardStyles }}>
       <CardHeader
         title={props.category.strMeal}
         sx={{ color: '#2A7221', width: "100%", fontsize: "6px"}}

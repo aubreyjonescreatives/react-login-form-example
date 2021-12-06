@@ -20,7 +20,7 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-
+import Link from '@mui/material/Link';
 
 
 const NavBar = () => {
@@ -41,28 +41,20 @@ const NavBar = () => {
   // }
 
 const drawerItemList = () => (
-  <Box sx={{width: 250}} role="presentation" className="drawerMenu">
+  <Box sx={{width: 250, backgroundColor: '#5FAD56'}} role="presentation" className="drawerMenu">
     <List>
     <ListItem button>
         <ListItemIcon sx={{color: "white"}}>
           <RestaurantIcon/>
         </ListItemIcon>
-        <NavLink to="/" className="navlink-3">Dash n' Dine</NavLink>
+        <Link href="/" sx={{ fontSize: '20px', color: 'white', textDecoration: 'none' }}>Dash n' Dine</Link>
       </ListItem>
-      {identity.user && (
-      <ListItem button>
-        <ListItemIcon sx={{color: "white"}}>
-        <Avatar sx={{width: 30, height: 30}}>{identity.user?.user_metadata?.full_name.slice(0, 1)}</Avatar>
-        </ListItemIcon>
-        <NavLink to="/Welcome" className="navlink-3">Hi, {identity.user?.user_metadata?.full_name}</NavLink>
-      </ListItem>
-      )}
        {identity.user && (
       <ListItem button>
         <ListItemIcon sx={{color: "white"}}>
           <MenuBookIcon/>
         </ListItemIcon>
-        <NavLink to="/LatestMeals" className="navlink-3">Latest Meals</NavLink>
+        <Link href="/LatestMeals" sx={{ fontSize: '20px', color: 'white', textDecoration: 'none' }}>Latest Meals</Link>
       </ListItem>
  )}
   {identity.user && (
@@ -70,7 +62,7 @@ const drawerItemList = () => (
      <ListItemIcon sx={{color: "white"}}>
        <LogoutIcon/>
      </ListItemIcon>
-     <NavLink to="/" className="navlink-3" >Logout</NavLink>
+     <Link href="/" className="navlink-3" sx={{ fontSize: '20px', color: 'white', textDecoration: 'none' }}>Logout</Link>
    </ListItem>
             
            )}
@@ -83,8 +75,8 @@ const drawerItemList = () => (
   <> 
   <nav id="navWrapper">
    
-  <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" className="appbar">
+  <Box sx={{ flexGrow: 1}}>
+      <AppBar position="static" sx={{ backgroundColor:"#5FAD56" }} >
         <Toolbar>
           <IconButton
             size="large"
@@ -96,17 +88,17 @@ const drawerItemList = () => (
           >
             <MenuIcon />
           </IconButton>
-          <Typography sx={{ flexGrow: 3, width: '200px' }}>
-          <NavLink to='/' className="navlink-1"  >
-            Dash n' Dine
-          </NavLink>
+          <Typography sx={{ flexGrow: 3, width: '200px'}}>
+          <Link href='/' sx={{ fontSize: '24px', color: 'inherit', textDecoration: 'none' }}>Dash n' Dine</Link>
           </Typography>
           {identity.user && (
-      <ListItem sx={{justifyContent: 'flex-end', flexGrow: 1}} button >
-        <ListItemIcon sx={{color: "white"}}>
-      <Avatar sx={{width: 30, height: 30, backgroundColor: '#ccc'}}>{identity.user?.user_metadata?.full_name.slice(0, 1)}</Avatar>
+      <ListItem sx={{justifyContent: 'flex-end', flexGrow: 1, color: 'white'}} button >
+        <ListItemIcon>
+      <Avatar sx={{width: 30, height: 30, backgroundColor: 'white', color: "#5FAD56"}}>{identity.user?.user_metadata?.full_name.slice(0, 1)}</Avatar>
         </ListItemIcon>
-        <NavLink to="/Welcome" className="navlink-3">Hi, {identity.user?.user_metadata?.full_name}</NavLink>
+        <Typography>
+        <Link href='/Welcome' sx={{ fontSize: '24px', color: 'inherit', textDecoration: 'none' }}>Hi, {identity.user?.user_metadata?.full_name}</Link>
+        </Typography>
       </ListItem>
       )}
         </Toolbar>
@@ -115,7 +107,7 @@ const drawerItemList = () => (
     </Box>
     
       </nav>
-      <Drawer anchor="left" open={isOpen} onClose={toggleDrawer}>
+      <Drawer anchor="left" open={isOpen} onClose={toggleDrawer} sx={{backgroundColor: '57FAD56'}}>
       {drawerItemList()}
       </Drawer>
   </>

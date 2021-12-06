@@ -93,33 +93,6 @@ header, nav, .containerAll, main, footer {
   margin: 0 auto;
   max-width: 566px; }
 
-.appbar div {
-  background-color: #5FAD56; }
-
-nav {
-  background-color: #5FAD56; }
-  nav .navText {
-    color: #ffffff;
-    font-size: 24px; }
-  nav .navlink-1 {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 24px; }
-  nav .navlink-2 {
-    color: #ffffff;
-    text-decoration: none;
-    padding: 0px 15px; }
-
-.drawerMenu {
-  background-color: #5FAD56; }
-
-.navlink-3 {
-  color: #ffffff;
-  text-decoration: none; }
-
-.navlink-3:hover {
-  color: #ffffff; }
-
 main {
   /* ------------------------Column----------------------------- */ }
   main .m-c-header {
@@ -201,9 +174,6 @@ main {
     font-family: "lato";
     margin: 0 auto;
     max-width: 1000px; }
-
-  #navWrapper {
-    background-color: #5FAD56; }
 
   main {
     /* ------------------------Column----------------------------- */ }
