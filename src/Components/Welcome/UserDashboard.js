@@ -5,7 +5,6 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import userFavorites from '../MealFavorites/MealFavorites'
 import { useMealContext } from '../../contexts/MealContext';
 
 
@@ -30,7 +29,8 @@ const style = {
 
 
 const Welcome = () => {
-  const foodData = useMealContext()
+  const {favoriteMeals} = useMealContext()
+  
 
     const identity = useIdentityContext()
     console.log(identity)
@@ -43,7 +43,7 @@ const Welcome = () => {
         <h1>What would you like to do?</h1>
 </Box>
 <Typography sx={typeStyle}>Favorited Meals</Typography>
-<Typography sx={typeStyle}> {foodData.yourfavoriteMeals.length}</Typography>
+<Typography sx={typeStyle}> {favoriteMeals?.length}</Typography>
 <userFavorites />
 
 

@@ -8,7 +8,7 @@ const MealContext = createContext({
 //categoryList: [],
 mealList: [],
 allMeals: [],
-yourfavoriteMeals: [], 
+favoriteMeals: [], 
 
 
 })
@@ -18,8 +18,32 @@ yourfavoriteMeals: [],
 export const MealContextProvider = (props) => {
    // const [categoryList] = useState([])
     const [mealList, setMealList] = useState([])
-    const [allMeals, setallMeals] = useState([])
-    const [yourfavoriteMeals] = useState([])
+   const [allMeals, setallMeals] = useState([])
+    const [favoriteMeals, setfavoriteMeals] = useState([])
+
+
+
+
+
+
+    const updateFavorites = (meal) => {
+
+        if (!favoriteMeals.includes(meal.idMeal)) {
+            setfavoriteMeals((prevState) => [ ...prevState, meal.idMeal]) 
+           
+            //   setFavoriteMeal((prevState) => [ ...prevState, <WelcomeSignedIn />]) 
+            console.log(`The ${meal.strMeal} meal was added to your favorite Meals`)
+        } else {
+            setfavoriteMeals(() => {
+                console.log(`The ${meal.strMeal} meal was removed from your favorite Meals`)
+                return favoriteMeals.filter((item) => item !== meal.idMeal)
+               
+            })
+        }
+        }
+
+
+
 
     const fetchInfo = async () => {
         const mealsURL = `/.netlify/functions/infoData`
@@ -44,7 +68,8 @@ export const MealContextProvider = (props) => {
         <MealContext.Provider value={{
         mealList,
         allMeals,
-        yourfavoriteMeals,
+        favoriteMeals,
+        updateFavorites, 
         }}>
             {props.children}
         </MealContext.Provider>

@@ -4,11 +4,7 @@ import Login from '../Login/LoginForm'
 import { Box } from '@mui/material'
 import {useMealContext } from '../../contexts/MealContext';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
@@ -36,11 +32,11 @@ const hStyle = {
   
 }
 
-const tStyle = {
-maxWidth: '1200px',
-margin: '20px 170px', 
-fontSize: '23px', 
-}
+// const tStyle = {
+// maxWidth: '1200px',
+// margin: '20px 170px', 
+// fontSize: '23px', 
+// }
 
 
 const cStyle = {

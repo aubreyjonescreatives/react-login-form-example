@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; 
+import * as React from 'react'; 
 import { useMealContext } from '../../contexts/MealContext'; 
 import MealCard from '../MealCard/MealCard';
 import Box from '@mui/material/Box';
@@ -12,6 +12,9 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Button from '@mui/material/Button';
 //import WelcomeSignedIn from '../../Components/Welcome/WelcomeSignedIn'
+
+
+
 
 const style = {
     position: 'absolute',
@@ -29,21 +32,18 @@ const style = {
 const LatestMeals = () => {
 
 
-//const idCategory = ["2", "4"]
 
 
-
-const [open, setOpen] = useState(false)
+const [open, setOpen] = React.useState(false)
 const handleOpen = () => setOpen(true)
 const handleClose = () => setOpen(false) 
-const [favoriteMeal, setFavoriteMeal] = useState([])
-const [shareFB, setshareFB] = useState(false)
-const [shareT, setshareT] = useState(false)
-const [shareI, setshareI] = useState(false)
+const [shareFB, setshareFB] = React.useState(false)
+const [shareT, setshareT] = React.useState(false)
+const [shareI, setshareI] = React.useState(false)
 
-const foodData = useMealContext()
+const { mealList } = useMealContext()
 
-
+console.log(mealList)
 
 
 
@@ -106,24 +106,6 @@ const handlesocialSubmit = () => {
     
 
 
-
-const addFavoriteMeal = (category) => {
-
-if (!favoriteMeal.includes(category.idMeal)) {
-    setFavoriteMeal((prevState) => [ ...prevState, category.strCategory]) 
-   
-    //   setFavoriteMeal((prevState) => [ ...prevState, <WelcomeSignedIn />]) 
-    console.log(`The ${category.strCategory} meal category was added to your favorite Meals`)
-} else {
-    setFavoriteMeal(() => {
-        console.log(`The ${category.strCategory} meal category was removed from your favorite Meals`)
-        return favoriteMeal.filter((item) => item !== category.idMeal)
-       
-    })
-}
-foodData.yourfavoriteMeal = favoriteMeal
-}
-
  
 
 
@@ -137,16 +119,15 @@ return (
 
 <Container className="containerAll">
   
-{foodData.mealList.map((category) => {
+{mealList.map((meal) => {
     return (
 
         
 
         <MealCard
-        key={category.idMeal}
-        addFavoriteMealFunction={addFavoriteMeal}
+        key={meal.idMeal}
         modalFunction={handleOpen}
-        category={{...category}}
+        meal={{...meal}}
         // id={mCategories.id}
         // strCategoryThumb={mCategories.strCategoryThumb}
         // strCategory={mCategories.strCategory} 

@@ -1,6 +1,6 @@
 import { Box } from '@mui/material'
 import { useIdentityContext } from 'react-netlify-identity-gotrue'
-import WelcomeSignedIn from './WelcomeSignedIn'
+import UserDashboard from './UserDashboard'
 
 
 
@@ -20,7 +20,7 @@ const Welcome = () => {
           <h1>Thanks for signing up! Check your email to confirm.</h1>
       )}
     {identity.user && (
-        <WelcomeSignedIn />
+        <UserDashboard />
     )}
 </Box>
    </>

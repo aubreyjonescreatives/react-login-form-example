@@ -1,12 +1,10 @@
 import React, { useState } from 'react'; 
-import { NavLink, useHistory } from 'react-router-dom';
-import {Tooltip} from '@mui/material' 
+import { useHistory } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
-import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
@@ -14,12 +12,9 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon'; 
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import MenuBookIcon from '@mui/icons-material/MenuBook';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useIdentityContext } from 'react-netlify-identity-gotrue'
 import LogoutIcon from '@mui/icons-material/Logout';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
 import Link from '@mui/material/Link';
 
 

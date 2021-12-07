@@ -1,22 +1,18 @@
 import * as React from 'react';
 import { useHistory } from 'react-router-dom'; 
 import '../../data/meals.json'; 
-import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
 import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import subImage from '../../images/foodimg.png'; 
 import LazyLoad from 'react-lazyload'
 import InfoIcon from '@mui/icons-material/Info';
-
+import { useMealContext } from '../../contexts/MealContext';
 
 
 const cardStyles = {
@@ -32,22 +28,34 @@ const cardStyles = {
 const MealCard = (props) => {
 
   const [favorite, setFavorite] = React.useState(false)
+  
+  const { favoriteMeals, updateFavorites } = useMealContext() 
+  
+  const { meal } = props
+
   const history = useHistory()
 
 
   const handleInfoClick = () => {
-  history.push(`/meals/${props.category.idMeal}`)
+  history.push(`/meals/${meal.idMeal}`)
+  
 
   }
 
-
+  //global changed state
 
   const handleFavoriteClick = () => {
-  //  console.log(props.idCategory)
-  console.log("Hello Favorite")
-  setFavorite(!favorite)
-  props.addFavoriteMealFunction(props.category)
+
+ updateFavorites(meal)
+ console.log("Hello Favorite")
+  
   }
+
+// local changed state
+
+  React.useEffect(() => {
+ favoriteMeals.includes(meal.idMeal) ? setFavorite(true) : setFavorite(false)
+  }, [meal.idMeal, favoriteMeals])
   
 
 
@@ -79,15 +87,15 @@ return (
 <>
 <Card sx={ cardStyles }>
       <CardHeader
-        title={props.category.strMeal}
-        sx={{ color: '#2A7221', width: "100%", fontsize: "6px"}}
+        title={props.meal.strMeal}
+        sx={{ color: '#2A7221', width: "100%", fontSize: "6px"}}
       />
       <LazyLoad>
       <CardMedia
         component="img"
         height="194"
-        image={`${props.category.strMealThumb}`}
-        alt={props.category.strCategory}
+        image={`${props.meal.strMealThumb}`}
+        alt={props.meal.strCategory}
         onError={handleImageLoadError}
       />
       </LazyLoad>
