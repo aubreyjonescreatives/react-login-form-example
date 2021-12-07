@@ -27,13 +27,29 @@ margin: '100px auto',
 
 const cardStyles = {
   width: '80%',
- 
   
+  
+  }
+
+  
+const cardStylesParent = {
+ 
+  display: 'flex', 
+  
+  }
+
+  const ccStyles = {
+    
+    marginTop: '10px', 
+    height: '400px',
+    width: '35%'
+    
   }
 
 
   const cardheaderStyles = {
-    backgroundColor: '#666', 
+   
+    backgroundColor: '#712', 
     color: 'white',
     
     
@@ -41,23 +57,20 @@ const cardStyles = {
 
 
 const ingredientStyles = {
+
 padding: '0px 5px',
-textAlign: 'center', 
+ 
 marginTop: '5px', 
 flexWrap: 'wrap', 
   }
 
 
   const cardsubheaderStyles = {
-  padding: '0px 15px', 
-  fontSize: '20px',
+ 
+  fontSize: '24px',
   }
 
-  const ccStyles = {
-    display: 'flex',
-    marginTop: '10px', 
-    height: '150px',
-  }
+  
 
   const mealInstructionStyles = {
    marginTop: '5px',
@@ -78,6 +91,7 @@ const MealDetails = () => {
       <>
     <Box sx={styles}>
   <Card sx={cardStyles}>
+  <CardContent  sx={cardStylesParent}>
   <CardHeader sx={cardheaderStyles}
   title={theMeal.strMeal}
   >
@@ -110,7 +124,7 @@ const MealDetails = () => {
   <Typography sx={cardsubheaderStyles} >Instructions: </Typography>
   <Typography sx={mealInstructionStyles}>{theMeal.strInstructions} </Typography>
   </CardContent>
-
+  </CardContent>
   <CardActions sx={{display: 'flex', justifyContent: 'center', backgroundColor: '#5FAD56'}} disableSpacing>
   <Typography >For a Full YouTube Tutorial, Click on this YouTube Icon:</Typography>
   <Link href={theMeal.strYoutube}> 
