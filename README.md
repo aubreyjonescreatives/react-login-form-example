@@ -13,7 +13,7 @@ https://www.themealdb.com/api.php API
 
 ## You Can Also Find My Deployed App Here: 
 
-### https://react-front-end-meals-app.netlify.app/
+### https://recipes-react-front-end-app.netlify.app/
 
 ## Here are Key Project Deliverables to This Repository: 
 
