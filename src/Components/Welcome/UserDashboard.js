@@ -1,3 +1,4 @@
+import * as React from 'react'; 
 import { Box } from '@mui/material'
 import { useIdentityContext } from 'react-netlify-identity-gotrue'
 import Card from '@mui/material/Card';
@@ -6,22 +7,22 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { useMealContext } from '../../contexts/MealContext';
-
+import MealCard from '../MealCard/MealCard';
 
 const style = {
-   margin: '50px 200px', 
+   margin: '50px 10px', 
    fontSize: '36px'
   
   }
 
   const style2 = {
-    margin: '50px 200px', 
+    margin: '50px 10px', 
     fontSize: '30px'
    
    }
 
    const typeStyle = {
-    margin: '50px 200px', 
+    margin: '50px 10px', 
     fontSize: '26px'
    
    }
@@ -29,8 +30,20 @@ const style = {
 
 
 const Welcome = () => {
-  const {favoriteMeals} = useMealContext()
-  
+  const {mealList, favoriteMeals} = useMealContext()
+  const [findFavorites, setfindFavorites] = React.useState([])
+
+  React.useEffect(() => {
+    setfindFavorites((prevState) => {
+      const finds =  mealList.filter((meals) =>  favoriteMeals.includes(meals.id))
+      console.log(finds)
+      return [...prevState, finds]
+    })
+    
+  }, [favoriteMeals, mealList])
+
+
+console.log(findFavorites)
 
     const identity = useIdentityContext()
     console.log(identity)
@@ -43,61 +56,28 @@ const Welcome = () => {
         <h1>What would you like to do?</h1>
 </Box>
 <Typography sx={typeStyle}>Favorited Meals</Typography>
-<Typography sx={typeStyle}> {favoriteMeals?.length}</Typography>
-<userFavorites />
-
-
 
 
 <Box sx={{display: 'flex', justifyContent: 'center'}}>
-<Card sx={{ maxWidth: 345, margin: '20px' }}>
-   
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
-    <Card sx={{ maxWidth: 345, margin: '20px' }}>
-   
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
-    <Card sx={{ maxWidth: 345, margin: '20px' }}>
-   
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-    </Card>
+
+
+{findFavorites.map((meal) => {
+    return (
+
+        
+       
+        <MealCard
+        key={meal.idMeal}
+        meal={{...meal}}
+        // id={mCategories.id}
+        // strCategoryThumb={mCategories.strCategoryThumb}
+        // strCategory={mCategories.strCategory} 
+        // strCategoryDescription={mCategories.strCategoryDescription}
+        />
+        
+    )
+    
+})}
     </Box>
 
 

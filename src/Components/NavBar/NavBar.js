@@ -16,6 +16,7 @@ import { useIdentityContext } from 'react-netlify-identity-gotrue'
 import LogoutIcon from '@mui/icons-material/Logout';
 import Avatar from '@mui/material/Avatar';
 import Link from '@mui/material/Link';
+import UseAnimations from 'react-useanimations';
 
 
 const NavBar = () => {
@@ -71,7 +72,7 @@ const drawerItemList = () => (
   <nav id="navWrapper">
    
   <Box sx={{ flexGrow: 1}}>
-      <AppBar position="static" sx={{ backgroundColor:"#5FAD56" }} >
+      <AppBar position="static" sx={{ backgroundColor:"#5FAD56", width: "100%" }} >
         <Toolbar>
           <IconButton
             size="large"
