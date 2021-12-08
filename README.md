@@ -4,7 +4,7 @@
 
 1. Clone the repository 
 2. Run NPM Install (to install project dependencies) 
-3. Run NPM NetDev (to inject an api key and netlify functions to access the Freel Meal API)
+3. Run NPM NetDev (to inject an api key and netlify functions)
 
 * Note: If you need an api key, I use the 
 https://www.themealdb.com/api.php API 
