@@ -14,7 +14,7 @@ import Button from '@mui/material/Button';
 //import WelcomeSignedIn from '../../Components/Welcome/WelcomeSignedIn'
 
 
-
+var ReactCSSTransitionGroup = require('react-transition-group');
 
 const style = {
     position: 'absolute',
@@ -123,7 +123,7 @@ return (
     return (
 
         
-
+       
         <MealCard
         key={meal.idMeal}
         modalFunction={handleOpen}
@@ -133,7 +133,7 @@ return (
         // strCategory={mCategories.strCategory} 
         // strCategoryDescription={mCategories.strCategoryDescription}
         />
-
+        
     )
     
 })}

@@ -33,37 +33,14 @@ main {
         display: flex; 
         flex-wrap: wrap; 
     
-        .meal-category-card {
-            margin: 20px; 
-             border: 1px solid grey;
-             width: 29%;  
+    .cardAnimations:hover {
+
+        transform: translate3D(0,-2px,0) scale(1.05);
+        cursor: pointer;
+
     
-             figure {
-                 width: 100%; 
-    
-            img {
-                    width: 80%; 
-                    display: block; 
-                    margin: auto; 
-                    margin-top: 10px; 
-                 }
-             }
-            
-         
-             .cardInfo {
-                 text-align: center; 
-                 margin: 20px; 
-             }
-    
-             .cardTitle {
-                 font-size: 24px; 
-             }
-    
-             .cardText {
-                 padding: 5px; 
-             }
-         
-         }
+
+    }
     
     
     

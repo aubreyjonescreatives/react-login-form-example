@@ -85,10 +85,11 @@ const MealCard = (props) => {
 
 return (
 <>
-<Card sx={ cardStyles }>
+<Card sx={ cardStyles } className="cardAnimations">
       <CardHeader
         title={props.meal.strMeal}
         sx={{ color: '#2A7221', width: "100%", fontSize: "6px"}}
+        onClick={handleInfoClick}
       />
       <LazyLoad>
       <CardMedia
@@ -97,10 +98,9 @@ return (
         image={`${props.meal.strMealThumb}`}
         alt={props.meal.strCategory}
         onError={handleImageLoadError}
+        onClick={handleInfoClick}
       />
       </LazyLoad>
-      <CardContent>
-      </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites" onClick={handleFavoriteClick}>
           <FavoriteIcon 
@@ -112,11 +112,7 @@ return (
           sx={{ color: shareMeal ? '#E71D36' : '#4C86A8'}}
           />
         </IconButton>
-        <IconButton aria-label="share" onClick={handleInfoClick}>
-          <InfoIcon 
-          sx={{ color: shareMeal ? '#E71D36' : '#4C86A8'}}
-          />
-        </IconButton>
+     
     
 
 

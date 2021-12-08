@@ -2,6 +2,7 @@ import React from 'react';
 import SignUp from '../Login/SignUpForm'
 import Login from '../Login/LoginForm'
 import { Box } from '@mui/material'
+import { useParams } from 'react-router-dom'; 
 import {useMealContext } from '../../contexts/MealContext';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
@@ -39,8 +40,8 @@ const hboxStyle = {
 const Landing = () => {
 
 
-  const meals = useMealContext()
- console.log(meals.allMeals)
+  const { mealList } = useMealContext()
+ console.log(mealList.strMealThumb)
   const [value, setValue] = React.useState('1');
 
   const handleChange = (event, newValue) => {
@@ -52,10 +53,11 @@ const Landing = () => {
     
         <Box> 
      
-      <Card sx={{ display: 'block', margin: '0 auto', height: '800px'}}>
+      <Card sx={{ display: 'block', margin: '0 auto', height: '800px', width: '100%'}}>
       <CardMedia
         component="img"
         alt="Meal of the Day"
+        image={`${mealList.strMealThumb}`}
       />
    
     </Card>

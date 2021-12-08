@@ -101,24 +101,9 @@ main {
   main .containerAll {
     display: flex;
     flex-wrap: wrap; }
-    main .containerAll .meal-category-card {
-      margin: 20px;
-      border: 1px solid grey;
-      width: 29%; }
-      main .containerAll .meal-category-card figure {
-        width: 100%; }
-        main .containerAll .meal-category-card figure img {
-          width: 80%;
-          display: block;
-          margin: auto;
-          margin-top: 10px; }
-      main .containerAll .meal-category-card .cardInfo {
-        text-align: center;
-        margin: 20px; }
-      main .containerAll .meal-category-card .cardTitle {
-        font-size: 24px; }
-      main .containerAll .meal-category-card .cardText {
-        padding: 5px; }
+    main .containerAll .cardAnimations:hover {
+      transform: translate3D(0, -2px, 0) scale(1.05);
+      cursor: pointer; }
   main .row {
     max-width: 650px; }
   main .column {
@@ -226,6 +211,10 @@ main {
     font-family: "lato";
     margin: 0 auto;
     max-width: 1200px; }
+
+  #navWrapper {
+    height: 50px;
+    background-color: #5FAD56; }
 
   main {
     /* ------------------------Column-----------------------------*/ }
