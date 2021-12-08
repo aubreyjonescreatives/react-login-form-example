@@ -12,6 +12,7 @@ import IconButton from '@mui/material/IconButton';
 import Link from '@mui/material/Link';
 
 
+
 const background = {
 
 }
@@ -92,10 +93,12 @@ const MealDetails = () => {
     <Box sx={styles}>
   <Card sx={cardStyles}>
   <CardContent  sx={cardStylesParent}>
+  
   <CardHeader sx={cardheaderStyles}
   title={theMeal.strMeal}
   >
   </CardHeader>
+ 
   <CardContent sx={ccStyles}>
   <Typography sx={cardsubheaderStyles}>Meal Ingredients: </Typography>
  <Typography sx={ingredientStyles}> {theMeal.strMeasure1} {theMeal.strIngredient1}</Typography>

@@ -11,26 +11,18 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 
 
-const mainStyle = {
-  maxWidth: '1200px',
-  display: 'block',
-  margin: '0 auto',
-}
 
 
-const hStyle = {
+const hboxStyle = {
   position: 'absolute', 
-  top: '5px', 
-  clear: 'both',
-  maxWidth: '1200px',  
-  margin: '100px auto', 
-  fontSize: '25px',
-  lineHeight: '100px',  
-  left: '30%', 
+  top: '100px',
   textAlign: 'center', 
-  color: '#666'
-  
+  width: '100%',
+  fontSize: '24px'
+ 
 }
+
+
 
 // const tStyle = {
 // maxWidth: '1200px',
@@ -38,12 +30,6 @@ const hStyle = {
 // fontSize: '23px', 
 // }
 
-
-const cStyle = {
-maxWidth: '1200px', 
-display: 'block', 
-margin: '0px auto', 
-}
 
 
 
@@ -63,8 +49,8 @@ const Landing = () => {
 
     return (
       <>
-      <Box sx={mainStyle}>
-        <Box sx={{cStyle}}> 
+    
+        <Box> 
      
       <Card sx={{ display: 'block', margin: '0 auto', height: '800px'}}>
       <CardMedia
@@ -76,27 +62,27 @@ const Landing = () => {
 
 </Box>
 
-   <Box sx={hStyle}>
+   <Box sx={hboxStyle}>
     <h1 >Welcome to the Latest and greatest Dash n' Dine meals.</h1>
-    <h1 > Care to Sign Up or Login?</h1>
+    <h1 > Care to Login or Sign Up?</h1>
     </Box>
    
     <Box sx={{ width: '100%', typography: 'body1' }} >
       <TabContext value={value} >
-        <Box sx={{ borderBottom: 1, borderColor: 'divider', position: 'absolute', top: '200px', left: '43%' }} >
+        <Box sx={{ position: 'absolute', top: '200px', width: '100%' }} >
           <TabList onChange={handleChange} aria-label="lab API tabs example" centered>
-            <Tab label="Sign Up" value="1" />
-            <Tab label="Login" value="2" />
+            <Tab label="Login" value="1" />
+            <Tab label="Sign Up" value="2" />
           </TabList>
         </Box>
-        <TabPanel value="1"><SignUp /></TabPanel>
-        <TabPanel value="2"><Login /></TabPanel>
+        <TabPanel value="1"><Login /></TabPanel>
+        <TabPanel value="2"><SignUp /></TabPanel>
       </TabContext>
     </Box>
 
 
 
-    </Box>
+   
       </>
   )
 }
