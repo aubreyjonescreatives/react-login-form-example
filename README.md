@@ -11,7 +11,7 @@ https://www.themealdb.com/api.php API
 
 * Note: They do not have an API key parameter. I stored my API in a .env file and then created a global const variable. I could then add this const variable to my API async await Netlify function
 
-## You Can Also Find the Deployed App Here: 
+## You Can Also Find My Deployed App Here: 
 
 ### https://react-front-end-meals-app.netlify.app/
 
