@@ -30,7 +30,7 @@ const App = () => {
   return (
    <>
    <Router>
-     <NetlifyIdentityContext url='https://fourth-course-project.netlify.app'>
+     <NetlifyIdentityContext url='https://react-front-end-meals-app.netlify.app'>
     <MealContextProvider>
      <NavBar />
   <Suspense fallback={<Box sx={style}>
