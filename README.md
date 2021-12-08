@@ -9,7 +9,7 @@
 * Note: If you need an api key, I use the 
 https://www.themealdb.com/api.php API 
 
-* Note: They do not have an API key parameter. I stored my API key in a .env file and then stored the ENV variable inside a global const variable . I could then add this const variable to my API async await Netlify function
+* Note: They do not have an API key parameter. I stored my API key in a .env file variable and then stored the ENV variable inside a global const variable . I could then add this const variable to my API async await Netlify function
 
 ## You Can Also Find My Deployed App Here: 
 
