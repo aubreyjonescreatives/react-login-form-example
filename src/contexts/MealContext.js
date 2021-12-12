@@ -1,14 +1,14 @@
-import React, { createContext, useState, useEffect, useContext } from 'react'; 
+import * as React from 'react'; 
 import axios from 'axios'
 
 
-const MealContext = createContext({
+const MealContext = React.createContext({
 
 
 //categoryList: [],
 mealList: [],
 allMeals: [],
-favoriteMeals: [], 
+favorites: [], 
 
 
 })
@@ -17,26 +17,26 @@ favoriteMeals: [],
 
 export const MealContextProvider = (props) => {
    // const [categoryList] = useState([])
-    const [mealList, setMealList] = useState([])
-   const [allMeals, setallMeals] = useState([])
-    const [favoriteMeals, setfavoriteMeals] = useState([])
+    const [mealList, setMealList] = React.useState([])
+   const [allMeals, setallMeals] = React.useState([])
+    const [favorites, setFavorites] = React.useState([])
 
 
 
 
 
 
-    const updateFavorites = (meal) => {
+    const updateFavorites = (mealInfo) => {
 
-        if (!favoriteMeals.includes(meal.idMeal)) {
-            setfavoriteMeals((prevState) => [ ...prevState, meal.idMeal]) 
+        if (!favorites.includes(mealInfo.idMeal)) {
+            setFavorites((prevState) => [ ...prevState, mealInfo.idMeal]) 
            
             //   setFavoriteMeal((prevState) => [ ...prevState, <WelcomeSignedIn />]) 
-            console.log(`The ${meal.strMeal} meal was added to your favorite Meals`)
+            console.log(`The ${mealInfo.strMeal} meal was added to your favorite Meals`)
         } else {
-            setfavoriteMeals(() => {
-                console.log(`The ${meal.strMeal} meal was removed from your favorite Meals`)
-                return favoriteMeals.filter((item) => item !== meal.idMeal)
+            setFavorites(() => {
+                console.log(`The ${mealInfo.strMeal} meal was removed from your favorite Meals`)
+                return favorites.filter((item) => item !== mealInfo.idMeal)
                
             })
         }
@@ -44,7 +44,7 @@ export const MealContextProvider = (props) => {
 
 
 
-
+React.useEffect(() => {
     const fetchInfo = async () => {
         const mealsURL = `/.netlify/functions/infoData`
         try {
@@ -58,17 +58,22 @@ export const MealContextProvider = (props) => {
         }
     }
     
-        useEffect(() => {
-            fetchInfo()
-        
-    }, [])
+
+    fetchInfo()
+
+
+
+
+}, [])
+
+
 
  // call the function
     return (
         <MealContext.Provider value={{
         mealList,
         allMeals,
-        favoriteMeals,
+        favorites,
         updateFavorites, 
         }}>
             {props.children}
@@ -80,4 +85,4 @@ export const MealContextProvider = (props) => {
 
 }
 
-export const useMealContext = () => useContext(MealContext)
+export const useMealContext = () => React.useContext(MealContext)

@@ -29,24 +29,32 @@ const style = {
 
 
 
-const Welcome = () => {
-  const {mealList, favoriteMeals} = useMealContext()
+const UserDashboard = () => {
+  
+  
+  
   const [findFavorites, setfindFavorites] = React.useState([])
+  const {allMeals, favorites} = useMealContext()
 
+
+
+  
   React.useEffect(() => {
     setfindFavorites((prevState) => {
-      const finds =  mealList.filter((meals) =>  favoriteMeals.includes(meals.id))
+      const finds =  allMeals.filter((mealInfo) =>  favorites.includes(mealInfo.idMeal))
       console.log(finds)
-      return [...prevState, finds]
+      return [...prevState, ...finds]
     })
     
-  }, [favoriteMeals, mealList])
+  }, [favorites, allMeals])
 
 
 console.log(findFavorites)
 
     const identity = useIdentityContext()
     console.log(identity)
+
+
     return (
         <>
          <Box sx={style}>
@@ -69,10 +77,7 @@ console.log(findFavorites)
         <MealCard
         key={meal.idMeal}
         meal={{...meal}}
-        // id={mCategories.id}
-        // strCategoryThumb={mCategories.strCategoryThumb}
-        // strCategory={mCategories.strCategory} 
-        // strCategoryDescription={mCategories.strCategoryDescription}
+      
         />
         
     )
@@ -198,4 +203,4 @@ console.log(findFavorites)
 
 }
 
-export default Welcome
+export default UserDashboard

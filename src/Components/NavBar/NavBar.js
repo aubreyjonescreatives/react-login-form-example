@@ -17,12 +17,14 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import Avatar from '@mui/material/Avatar';
 import Link from '@mui/material/Link';
 import UseAnimations from 'react-useanimations';
+import { useMealContext } from '../../contexts/MealContext';
 
 
 const NavBar = () => {
 
  const identity = useIdentityContext()
   // const history = useHistory()
+  const { favorites } = useMealContext()
 
   const [isOpen, setIsOpen] = useState(false)
 
@@ -87,6 +89,9 @@ const drawerItemList = () => (
           <Typography sx={{ flexGrow: 3, width: '200px'}}>
           <Link href='/' sx={{ fontSize: '24px', color: 'inherit', textDecoration: 'none' }}>Dash n' Dine</Link>
           </Typography>
+          {identity.user && (
+          <Typography sx={{ marginLeft: '20px', flexGrow: 3, width: '200px'}}>Favorites: {favorites?.length}</Typography>
+          )}
           {identity.user && (
       <ListItem sx={{justifyContent: 'flex-end', flexGrow: 1, color: 'white'}} button >
         <ListItemIcon>

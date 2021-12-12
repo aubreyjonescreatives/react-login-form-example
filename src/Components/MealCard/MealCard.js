@@ -18,8 +18,6 @@ import { useMealContext } from '../../contexts/MealContext';
 const cardStyles = {
   width: 345, 
   margin: 2 
-//  transform: translate3D('0, -1px, 0') scale('1.03') 
-
 
 
 }
@@ -27,13 +25,20 @@ const cardStyles = {
 
 const MealCard = (props) => {
 
-  const [favorite, setFavorite] = React.useState(false)
   
-  const { favoriteMeals, updateFavorites } = useMealContext() 
+  const history = useHistory()
   
   const { meal } = props
 
-  const history = useHistory()
+// local
+  const [favorite, setFavorite] = React.useState(false)
+  
+
+// global 
+  const { favorites, updateFavorites } = useMealContext()
+  
+
+  
 
 
   const handleInfoClick = () => {
@@ -48,14 +53,15 @@ const MealCard = (props) => {
 
  updateFavorites(meal)
  console.log("Hello Favorite")
-  
+ 
   }
 
 // local changed state
 
   React.useEffect(() => {
- favoriteMeals.includes(meal.idMeal) ? setFavorite(true) : setFavorite(false)
-  }, [meal.idMeal, favoriteMeals])
+ favorites.includes(meal.idMeal) ? setFavorite(true) : setFavorite(false)
+ console.log(favorites)
+  }, [meal.idMeal, favorites])
   
 
 
