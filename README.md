@@ -199,17 +199,129 @@ Navigation custom component:
 
 7. Use a mix of CSS animations and Transition Component transitions to enhance some aspects of your project.
 
+There's nothing quite like CSS animations and Transition Components to enhance a project: 
+
+CSS Animation: 
+
+```
+ .cardAnimations:hover {
+
+        transform: translate3D(0,-2px,0) scale(1.05);
+        cursor: pointer;
+
+    
+
+    }
+    
+
+
+```
+
+This transform:translate3D expands a card on hover to make it look clickable. And it sure is clickable to find more information. 
+
 
 8. Connect to a server using Netlify functions and display retrieved data including at least 5 item details (accessed by details route) in your UI.
+
+I love serverless Netlify functions! It makes APIs that much easier and that much more protected in your code. This is what you'd find in my infoData.js Netlify function: 
+
+```
+
+const axios = require('axios')
+
+const APIKEY = process.env.MEAL_API_KEY
+
+
+exports.handler = async function (event, context) {
+    console.log(event)
+    console.log(context) 
+    try {
+      //  const { querystring } = event.queryStringParameters
+       // const { endpoint2 } = event.queryStringParameters
+        const response = await axios.get(`https://www.themealdb.com/api/json/v2/${APIKEY}/latest.php`, {
+     //   headers: {'api-key': process.env.MEAL_API_KEY}
+    })
+    return {
+        statusCode: 200, 
+        body: JSON.stringify(response.data)
+    }
+    } catch (err) {
+        return {
+            statusCode: 404, 
+            body: err.toString()
+        }
+    }
+}
+
+
+
+
+
+```
+
 
 
 9. Provide at least 3 different routes with navigation between them using React Router.
 
+Routes are so nice when it comes to using React Router and expanding the idea behind React's single page application. Here are some route examples from my app.js file: 
+
+```
+
+ <Route path="/" exact component={LandingPage} />
+  <Route path="/Welcome" exact component={Welcome} />
+  <Route path="/UserDashboard" exact component={UserDashboard} />
+
+
+
+```
+
+
+
 
 10. Manage your application's general and signup/login Authentication state using Hooks and the Context API.
+
+Where are we today without signup/login authentication? I used Formik, which is an excellent third party package manager and a great way to provide authentication. I also used the useIdentityContext() hook provided by the react-netlify-identity-gotrue third party package manager for authentication as well. You'll find my complete setup in the NavBar, SignUpForm, and LoginForm components. Here is a snippet of code for an example from the SignUpForm component. It demonstrates how to require a username, email, and password with minimum requirements: 
+
+
+```
+  validationSchema={
+        Yup.object().shape({
+          username: Yup.string()
+          .min(4)
+          .required('Username is required.'),
+            email: Yup.string()
+            .email('Must be a valid email.')
+            .max(255)
+            .required('Email is required.'),
+            password: Yup.string()
+            .min(6, 'Must include at least 6 characters.')
+            .max(25, 'We KNOW your password isn' + 't more than 25 characters long.')
+            .required('A password is required.'),
+        })}
+
+
+
+
+```
+
 
 
 11. Structure, document, and deploy your final project code according to common industry practices.
 
+I documented my project code according to the common Github industry practices. I committed and pushed often with clear commits. I also updated my repo's Readme file. I deployed this project to Netlify and used very up-to-date Netlify functions to create a serverless app. 
+
+
 
 12. You will submit the GitHub URL for your project AND the URL of where your project is deployed online (Netlify).  The ReadMe file in your GitHub repo will list where in your code each of the required features listed above can be found.
+
+
+
+Github Repository: 
+
+
+https://github.com/aubreyjonescreatives/recipes-react-front-end-app
+
+
+Netlify Deployed App: 
+
+
+https://recipes-react-front-end-app.netlify.app/
