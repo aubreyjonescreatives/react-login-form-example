@@ -258,6 +258,12 @@ exports.handler = async function (event, context) {
 
 ```
 
+And if you are curious with what it looks like to demonstrate API data visually, here are some examples from this website: 
+
+
+![Visual information from API](src/images/data1.PNG)
+
+![Visual information from API 2](src/images/data2.PNG)
 
 
 9. Provide at least 3 different routes with navigation between them using React Router.
