@@ -177,12 +177,24 @@ You need 3 data input items to sign up. They include: name, email, and password.
 
 If something goes wrong, I also provided feedback: 
 
-![Signup Form](src/images/signupfeedback.PNG)
+![Signup Form Feedback](src/images/signupfeedback.PNG)
 
 
 
 
 6. Create at least 5 custom components and use them within at least two of your other components.
+
+When you sign in, you can have access to more custom components. The Signup and login form components are actually built within the landing page component. And we can see the navigation built in component on every page as well. 
+
+Login and Signup Custom Components: 
+
+![Login and Signup Custom Components](src/images/logsigncustomcom.PNG)
+
+
+Navigation custom component: 
+
+![Navigation Custom Component](src/images/customcomponent.PNG)
+
 
 
 7. Use a mix of CSS animations and Transition Component transitions to enhance some aspects of your project.
