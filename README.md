@@ -193,7 +193,7 @@ Login and Signup Custom Components:
 
 Navigation custom component: 
 
-![Navigation Custom Component](src/images/customcomponent.PNG)
+![Navigation Custom Component](src/images/customcomponents.PNG)
 
 
 
