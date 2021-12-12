@@ -1,17 +1,14 @@
 import * as React from 'react';
 import { useHistory } from 'react-router-dom'; 
-import '../../data/meals.json'; 
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import subImage from '../../images/foodimg.png'; 
 import LazyLoad from 'react-lazyload'
-import InfoIcon from '@mui/icons-material/Info';
 import { useMealContext } from '../../contexts/MealContext';
 
 
@@ -53,6 +50,7 @@ const MealCard = (props) => {
 
  updateFavorites(meal)
  console.log("Hello Favorite")
+ console.log(meal)
  
   }
 

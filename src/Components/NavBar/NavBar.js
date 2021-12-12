@@ -1,4 +1,4 @@
-import React, { useState } from 'react'; 
+import * as React from 'react'; 
 import { useHistory } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -16,17 +16,18 @@ import { useIdentityContext } from 'react-netlify-identity-gotrue'
 import LogoutIcon from '@mui/icons-material/Logout';
 import Avatar from '@mui/material/Avatar';
 import Link from '@mui/material/Link';
-import UseAnimations from 'react-useanimations';
 import { useMealContext } from '../../contexts/MealContext';
 
 
 const NavBar = () => {
 
  const identity = useIdentityContext()
+
   // const history = useHistory()
+  
   const { favorites } = useMealContext()
 
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = React.useState(false)
 
   const toggleDrawer = () => {
     setIsOpen(!isOpen)

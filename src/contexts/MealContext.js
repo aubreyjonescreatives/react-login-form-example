@@ -28,12 +28,11 @@ export const MealContextProvider = (props) => {
 
     const updateFavorites = (mealInfo) => {
 
+        console.log(`The ${mealInfo.strMeal} meal was added to your favorite Meals`)
+      
         if (!favorites.includes(mealInfo.idMeal)) {
             setFavorites((prevState) => [ ...prevState, mealInfo.idMeal]) 
-           
-            //   setFavoriteMeal((prevState) => [ ...prevState, <WelcomeSignedIn />]) 
-            console.log(`The ${mealInfo.strMeal} meal was added to your favorite Meals`)
-        } else {
+          } else {
             setFavorites(() => {
                 console.log(`The ${mealInfo.strMeal} meal was removed from your favorite Meals`)
                 return favorites.filter((item) => item !== mealInfo.idMeal)

@@ -36,12 +36,12 @@ const UserDashboard = () => {
   const [findFavorites, setfindFavorites] = React.useState([])
   const {allMeals, favorites} = useMealContext()
 
+console.log(favorites)
 
 
-  
   React.useEffect(() => {
     setfindFavorites((prevState) => {
-      const finds =  allMeals.filter((mealInfo) =>  favorites.includes(mealInfo.idMeal))
+      const finds = allMeals.filter((mealInfo) => favorites.includes(mealInfo.idMeal))
       console.log(finds)
       return [...prevState, ...finds]
     })
@@ -49,7 +49,6 @@ const UserDashboard = () => {
   }, [favorites, allMeals])
 
 
-console.log(findFavorites)
 
     const identity = useIdentityContext()
     console.log(identity)

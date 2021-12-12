@@ -11,10 +11,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Button from '@mui/material/Button';
-//import WelcomeSignedIn from '../../Components/Welcome/WelcomeSignedIn'
 
-
-var ReactCSSTransitionGroup = require('react-transition-group');
 
 const style = {
     position: 'absolute',
@@ -41,9 +38,9 @@ const [shareFB, setshareFB] = React.useState(false)
 const [shareT, setshareT] = React.useState(false)
 const [shareI, setshareI] = React.useState(false)
 
-const { mealList } = useMealContext()
+const { allMeals } = useMealContext()
 
-console.log(mealList)
+console.log(allMeals)
 
 
 
@@ -119,7 +116,7 @@ return (
 
 <Container className="containerAll">
   
-{mealList.map((meal) => {
+{allMeals.map((meal) => {
     return (
 
         
