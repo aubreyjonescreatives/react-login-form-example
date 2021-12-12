@@ -4,8 +4,6 @@ import Login from '../Login/LoginForm'
 import { Box } from '@mui/material'
 import { useParams } from 'react-router-dom'; 
 import {useMealContext } from '../../contexts/MealContext';
-import Card from '@mui/material/Card';
-import CardMedia from '@mui/material/CardMedia';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
@@ -22,6 +20,16 @@ const hboxStyle = {
   fontSize: '24px'
  
 }
+
+
+
+const backgroundStyle = {
+
+ backgroundColor: '#edc', 
+ height: '900px',
+ 
+}
+
 
 
 
@@ -51,21 +59,11 @@ const Landing = () => {
     return (
       <>
     
-        <Box> 
-     
-      <Card sx={{ display: 'block', margin: '0 auto', height: '800px', width: '100%'}}>
-      <CardMedia
-        component="img"
-        alt="Meal of the Day"
-        image={`${mealList.strMealThumb}`}
-      />
-   
-    </Card>
-
-</Box>
+        <Box sx={backgroundStyle}> 
+    
 
    <Box sx={hboxStyle}>
-    <h1 >Welcome to the Latest and greatest Dash n' Dine meals.</h1>
+    <h1 >Welcome to the Latest and greatest Dash n' Dine meals!</h1>
     <h1 > Care to Login or Sign Up?</h1>
     </Box>
    
@@ -83,7 +81,7 @@ const Landing = () => {
     </Box>
 
 
-
+    </Box>
    
       </>
   )

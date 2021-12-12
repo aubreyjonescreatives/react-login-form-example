@@ -18,7 +18,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/mealsStyles.css'; 
 
 const LatestMeals = React.lazy(() => import('./Components/LatestMeals/LatestMeals'));
-const MealFavorites = React.lazy(() => import('./Components/MealFavorites/MealFavorites'));
 const MealDetails = React.lazy(() => import('./Components/MealDetails/MealDetails'));
 
 
@@ -43,7 +42,6 @@ const App = () => {
   <Route path="/UserDashboard" exact component={UserDashboard} />
   <Route path="/Confirm" exact component={Confirm} />
   <Route path="/LatestMeals" exact component={LatestMeals} />
-  <Route path="/MealFavorites" exact component={MealFavorites} />
   <Route path="/meals/:idMeal" exact component={MealDetails} />
   <Route path="/loginForm" exact component={loginPage} />
   <Route path="/SignUpForm" exact component={SignUpPage} />

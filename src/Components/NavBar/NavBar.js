@@ -72,11 +72,11 @@ const drawerItemList = () => (
 
   return (
   <> 
-  <nav id="navWrapper">
+  <nav id="navWrapper" >
    
-  <Box sx={{ flexGrow: 1}}>
-      <AppBar position="static" sx={{ backgroundColor:"#5FAD56", width: "100%" }} >
-        <Toolbar>
+  <Box sx={{ flexGrow: 1, width: '100%'}}>
+      <AppBar position="static" sx={{ backgroundColor:"#5FAD56", width: "100%", boxShadow: 0 }} >
+        <Toolbar  sx={{ paddingBottom: 20}}>
           <IconButton
             size="large"
             edge="start"
