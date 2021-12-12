@@ -8,8 +8,10 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-
-
+import Card from '@mui/material/Card';
+import CardHeader from '@mui/material/CardHeader';
+import CardMedia from '@mui/material/CardMedia';
+import LandingBackground from '../../images/landingbackground.jpg'
 
 
 const hboxStyle = {
@@ -21,13 +23,12 @@ const hboxStyle = {
  
 }
 
-
-
-const backgroundStyle = {
-
- backgroundColor: '#edc', 
- height: '900px',
- 
+const background = {
+  clear: 'both', 
+  display: 'block', 
+  width: '100%',
+  height: '800px'
+  
 }
 
 
@@ -52,6 +53,7 @@ const Landing = () => {
  console.log(mealList.strMealThumb)
   const [value, setValue] = React.useState('1');
 
+
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -59,8 +61,20 @@ const Landing = () => {
     return (
       <>
     
-        <Box sx={backgroundStyle}> 
+    <Box> 
     
+    
+      <CardMedia 
+      component="img"
+      image={LandingBackground}
+      sx={background}
+     
+      
+      
+      />
+      
+
+
 
    <Box sx={hboxStyle}>
     <h1 >Welcome to the Latest and greatest Dash n' Dine meals!</h1>

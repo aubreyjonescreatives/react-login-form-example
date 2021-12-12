@@ -10,16 +10,13 @@ import { useMealContext } from '../../contexts/MealContext';
 import MealCard from '../MealCard/MealCard';
 
 const style = {
-   margin: '50px 10px', 
-   fontSize: '36px'
-  
+  margin: '50px 10px',
+  fontSize: '36px', 
+   
+    
   }
 
-  const style2 = {
-    margin: '50px 10px', 
-    fontSize: '30px'
-   
-   }
+  
 
    const typeStyle = {
     margin: '50px 10px', 
@@ -56,12 +53,11 @@ console.log(favorites)
 
     return (
         <>
+        <Box className="landingPage">
          <Box sx={style}>
-        <h1>Hi, {identity.user?.user_metadata?.full_name}</h1>
+        <h1>Hi, {identity.user?.user_metadata?.full_name}, How's life?</h1>
         </Box>
-        <Box sx={style2}>
-        <h1>What would you like to do?</h1>
-</Box>
+       
 <Typography sx={typeStyle}>Favorited Meals</Typography>
 
 
@@ -191,7 +187,7 @@ console.log(favorites)
 
 
 
-
+    </Box>
 
 
 

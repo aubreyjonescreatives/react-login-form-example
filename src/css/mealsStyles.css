@@ -88,7 +88,7 @@ html {
   box-sizing: border-box; }
 
 /* -----------------------BODY------------------------------- */
-header, .containerAll, main, footer {
+header, .containerAll, .landingPage, main, footer {
   font-family: "lato";
   margin: 0 auto;
   max-width: 566px; }
@@ -155,7 +155,7 @@ main {
   padding: 20px; }
 
 @media only screen and (min-width: 600px) {
-  header, .containerAll, main, footer {
+  header, .containerAll, .landingPage, main, footer {
     font-family: "lato";
     margin: 0 auto;
     max-width: 1024px; }
@@ -207,7 +207,7 @@ main {
       float: left; } }
 /* end media query */
 @media only screen and (min-width: 1024px) {
-  header, .containerAll, main, footer {
+  header, .containerAll, .landingPage, main, footer {
     font-family: "lato";
     margin: 0 auto;
     max-width: 1200px; }
