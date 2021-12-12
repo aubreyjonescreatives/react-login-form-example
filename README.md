@@ -184,7 +184,7 @@ If something goes wrong, I also provided feedback:
 
 6. Create at least 5 custom components and use them within at least two of your other components.
 
-When you sign in, you can have access to more custom components. The Signup and login form components are actually built within the landing page component. And we can see the navigation built in component on every page as well. 
+When you sign in, you can have access to more custom components. The Signup and login form components are actually built into the landing page component. And we can see the navigation component built into every page as well. 
 
 Login and Signup Custom Components: 
 
