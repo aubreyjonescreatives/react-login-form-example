@@ -331,3 +331,8 @@ Netlify Deployed App:
 
 
 https://recipes-react-front-end-app.netlify.app/
+
+
+13. Final Thoughts: 
+
+Thank you so much for looking into this repository and project! I had a lot of fun learning how to create a React app with signup and login forms. Feel free to reach out to me if you have any questions! Take care and happy coding. 
