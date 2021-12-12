@@ -222,7 +222,7 @@ This transform:translate3D expands a card on hover to make it look clickable. An
 
 8. Connect to a server using Netlify functions and display retrieved data including at least 5 item details (accessed by details route) in your UI.
 
-I love serverless Netlify functions! It makes APIs that much easier and that much more protected in your code. This is what you'd find in my infoData.js Netlify function: 
+I love serverless Netlify functions! It makes APIs that much easier and that much more protected in your code, especially with ENV variables. This is what you'd find in my infoData.js Netlify function: 
 
 ```
 
