@@ -50,7 +50,6 @@ const MealCard = (props) => {
 
  updateFavorites(meal)
  console.log("Hello Favorite")
- console.log(meal)
  
   }
 

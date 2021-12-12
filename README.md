@@ -20,6 +20,63 @@ https://www.themealdb.com/api.php API
 
 1. Effectively use conditional logic and JavaScript array methods(e.g. Filter, Map, Reduce, Find) to render large lists.
 
+To demonstrate JS array methods, I often use Filter and Map to display large lists of data. Here are examples on my User Dashboard page: 
+
+Filtering through a useEffect React hook: 
+
+
+``` 
+
+
+  React.useEffect(() => {
+    setfindFavorites((prevState) => {
+      const finds = allMeals.filter((mealInfo) => favorites.includes(mealInfo.idMeal))
+      console.log(finds)
+      return [...prevState, ...finds]
+    })
+    
+  }, [favorites, allMeals])
+
+
+
+
+
+```
+
+
+Mapping through an array of API data:  
+
+
+``` 
+
+
+<Box sx={{display: 'flex', justifyContent: 'center'}}>
+
+
+{findFavorites.map((meal) => {
+    return (
+
+        
+       
+        <MealCard
+        key={meal.idMeal}
+        meal={{...meal}}
+      
+        />
+        
+    )
+    
+})}
+    </Box>
+
+
+
+
+
+
+
+```
+
 
 2. Encapsulate your code as React functional components.
 
