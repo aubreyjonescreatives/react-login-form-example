@@ -111,7 +111,7 @@ const drawerItemList = () => (
           >
             <MenuIcon />
           </IconButton>
-          <Typography sx={{ flexGrow: 3, width: '200px'}}>
+          <Typography sx={{ flexGrow: 3, width: '300px'}}>
           <Link href='/' sx={linkStyling}>Dash n' Dine</Link>
           </Typography>
           {identity.user && (
