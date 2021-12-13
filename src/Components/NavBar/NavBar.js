@@ -16,6 +16,7 @@ import { useIdentityContext } from 'react-netlify-identity-gotrue'
 import LogoutIcon from '@mui/icons-material/Logout';
 import Avatar from '@mui/material/Avatar';
 import Link from '@mui/material/Link';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useMealContext } from '../../contexts/MealContext';
 
 
@@ -57,6 +58,14 @@ const drawerItemList = () => (
         <Link href="/LatestMeals" sx={{ fontSize: '20px', color: 'white', textDecoration: 'none' }}>Latest Meals</Link>
       </ListItem>
  )}
+   {identity.user && (
+      <ListItem button>
+        <ListItemIcon sx={{color: "white"}}>
+          <FavoriteIcon/>
+        </ListItemIcon>
+        <Link href="/FavoritesPage" sx={{ fontSize: '20px', color: 'white', textDecoration: 'none' }}>Favorites: {favorites?.length}</Link>
+      </ListItem>
+ )}
   {identity.user && (
      <ListItem button  onClick={identity.logout}>
      <ListItemIcon sx={{color: "white"}}>
@@ -91,9 +100,6 @@ const drawerItemList = () => (
           <Typography sx={{ flexGrow: 3, width: '200px'}}>
           <Link href='/' sx={{ fontSize: '24px', color: 'inherit', textDecoration: 'none' }}>Dash n' Dine</Link>
           </Typography>
-          {identity.user && (
-          <Typography sx={{ marginLeft: '20px', flexGrow: 3, width: '200px'}}>Favorites: {favorites?.length}</Typography>
-          )}
           {identity.user && (
       <ListItem sx={{justifyContent: 'flex-end', flexGrow: 1, color: 'white'}} button >
         <ListItemIcon>

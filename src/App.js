@@ -8,6 +8,7 @@ import NavBar from './Components/NavBar/NavBar';
 //import Footer from './Components/Footer/Footer'; 
 import Welcome from './Components/Welcome/Welcome';
 import UserDashboard from './Components/Welcome/UserDashboard'; 
+import FavoritesPage from './Components/FavoritesPage/FavoritesPage';
 import Confirm from './Components/Login/Confirm'; 
 import LandingPage from './Components/Landing/Landing'; 
 import loginPage from './Components/Login/LoginForm'; 
@@ -42,6 +43,7 @@ const App = () => {
   <Route path="/UserDashboard" exact component={UserDashboard} />
   <Route path="/Confirm" exact component={Confirm} />
   <Route path="/LatestMeals" exact component={LatestMeals} />
+  <Route path="/FavoritesPage" exact component={FavoritesPage} />
   <Route path="/meals/:idMeal" exact component={MealDetails} />
   <Route path="/loginForm" exact component={loginPage} />
   <Route path="/SignUpForm" exact component={SignUpPage} />
