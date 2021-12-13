@@ -27,7 +27,7 @@ const background = {
   clear: 'both', 
   display: 'block', 
   width: '100%',
-  height: '800px'
+  height: '900px'
   
 }
 
