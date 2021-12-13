@@ -20,6 +20,20 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { useMealContext } from '../../contexts/MealContext';
 
 
+const linkStyling = {
+  fontSize: '20px', 
+  color: 'white', 
+  textDecoration: 'none',
+  "&:hover": {
+    color: 'white', 
+   
+   
+  }
+
+}
+
+
+
 const NavBar = () => {
 
 
@@ -48,14 +62,14 @@ const drawerItemList = () => (
         <ListItemIcon sx={{color: "white"}}>
           <RestaurantIcon/>
         </ListItemIcon>
-        <Link href="/" sx={{ fontSize: '20px', color: 'white', textDecoration: 'none' }}>Dash n' Dine</Link>
+        <Link href="/" sx={linkStyling}>Dash n' Dine</Link>
       </ListItem>
        {identity.user && (
       <ListItem button>
         <ListItemIcon sx={{color: "white"}}>
           <MenuBookIcon/>
         </ListItemIcon>
-        <Link href="/LatestMeals" sx={{ fontSize: '20px', color: 'white', textDecoration: 'none' }}>Latest Meals</Link>
+        <Link href="/LatestMeals" sx={linkStyling}>Latest Meals</Link>
       </ListItem>
  )}
    {identity.user && (
@@ -63,7 +77,7 @@ const drawerItemList = () => (
         <ListItemIcon sx={{color: "white"}}>
           <FavoriteIcon/>
         </ListItemIcon>
-        <Link href="/FavoritesPage" sx={{ fontSize: '20px', color: 'white', textDecoration: 'none' }}>Favorites: {favorites?.length}</Link>
+        <Link href="/FavoritesPage" sx={linkStyling}>Favorites: {favorites?.length}</Link>
       </ListItem>
  )}
   {identity.user && (
@@ -71,7 +85,7 @@ const drawerItemList = () => (
      <ListItemIcon sx={{color: "white"}}>
        <LogoutIcon/>
      </ListItemIcon>
-     <Link href="/" className="navlink-3" sx={{ fontSize: '20px', color: 'white', textDecoration: 'none' }}>Logout</Link>
+     <Link href="/" className="navlink-3" sx={linkStyling}>Logout</Link>
    </ListItem>
             
            )}
@@ -98,7 +112,7 @@ const drawerItemList = () => (
             <MenuIcon />
           </IconButton>
           <Typography sx={{ flexGrow: 3, width: '200px'}}>
-          <Link href='/' sx={{ fontSize: '24px', color: 'inherit', textDecoration: 'none' }}>Dash n' Dine</Link>
+          <Link href='/' sx={linkStyling}>Dash n' Dine</Link>
           </Typography>
           {identity.user && (
       <ListItem sx={{justifyContent: 'flex-end', flexGrow: 1, color: 'white'}} button >
@@ -106,7 +120,7 @@ const drawerItemList = () => (
       <Avatar sx={{width: 30, height: 30, backgroundColor: 'white', color: "#5FAD56"}}>{identity.user?.user_metadata?.full_name.slice(0, 1)}</Avatar>
         </ListItemIcon>
         <Typography>
-        <Link href='/Welcome' sx={{ fontSize: '24px', color: 'inherit', textDecoration: 'none' }}>Hi, {identity.user?.user_metadata?.full_name}</Link>
+        <Link href='/Welcome' sx={linkStyling}>Hi, {identity.user?.user_metadata?.full_name}</Link>
         </Typography>
       </ListItem>
       )}

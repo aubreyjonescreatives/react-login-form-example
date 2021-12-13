@@ -73,10 +73,7 @@ const UserDashboard = () => {
     return (
         <>
         <Box className="landingPage">
-    
-       
-<Typography sx={typeStyle}>Favorited Meals</Typography>
-
+  
 <FavoritesPage/ >
 
  
