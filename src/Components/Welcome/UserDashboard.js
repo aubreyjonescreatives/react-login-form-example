@@ -9,7 +9,7 @@ import { useMealContext } from '../../contexts/MealContext';
 import MealCard from '../MealCard/MealCard';
 import { Transition } from 'react-transition-group'; 
 import Button from '@mui/material/Button';
-
+import FavoritesPage from '../FavoritesPage/FavoritesPage'
 
 const duration = 50; 
 
@@ -63,21 +63,7 @@ const UserDashboard = () => {
  
 
   const [inProp, setInProp] = React.useState(false); 
-  const [findFavorites, setfindFavorites] = React.useState([])
-  const {allMeals, favorites} = useMealContext()
-
-console.log(favorites)
-
-
-  React.useEffect(() => {
-    setfindFavorites((prevState) => {
-      const finds = allMeals.filter((mealInfo) => favorites.includes(mealInfo.idMeal))
-      console.log(finds)
-      return [...prevState, ...finds]
-    })
-    
-  }, [favorites, allMeals])
-
+ 
 
 
     const identity = useIdentityContext()
@@ -87,31 +73,13 @@ console.log(favorites)
     return (
         <>
         <Box className="landingPage">
-         <Box sx={style}>
-        <h1>Hi, {identity.user?.user_metadata?.full_name}, How's Life?</h1>
-        </Box>
+    
        
 <Typography sx={typeStyle}>Favorited Meals</Typography>
 
+<FavoritesPage/ >
 
-<Box sx={{display: 'flex', justifyContent: 'center'}}>
-
-
-{findFavorites.map((meal) => {
-    return (
-
-        
-       
-        <MealCard
-        key={meal.idMeal}
-        meal={{...meal}}
-      
-        />
-        
-    )
-    
-})}
-    </Box>
+ 
 
 
 
