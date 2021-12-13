@@ -21,6 +21,7 @@ import { useMealContext } from '../../contexts/MealContext';
 
 const NavBar = () => {
 
+
  const identity = useIdentityContext()
 
   // const history = useHistory()

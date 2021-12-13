@@ -4,8 +4,7 @@ import { useIdentityContext } from 'react-netlify-identity-gotrue'
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import Typography from '@mui/material/Typography'; 
 import { useMealContext } from '../../contexts/MealContext';
 import MealCard from '../MealCard/MealCard';
 
@@ -27,9 +26,7 @@ const style = {
 
 
 const UserDashboard = () => {
-  
-  
-  
+ 
   const [findFavorites, setfindFavorites] = React.useState([])
   const {allMeals, favorites} = useMealContext()
 
@@ -55,7 +52,7 @@ console.log(favorites)
         <>
         <Box className="landingPage">
          <Box sx={style}>
-        <h1>Hi, {identity.user?.user_metadata?.full_name}, How's life?</h1>
+        <h1>Hi, {identity.user?.user_metadata?.full_name}, How's Life?</h1>
         </Box>
        
 <Typography sx={typeStyle}>Favorited Meals</Typography>
@@ -88,7 +85,7 @@ console.log(favorites)
 
     <Typography sx={typeStyle}>Account Details</Typography>
 <Box sx={{display: 'flex', justifyContent: 'center'}}>
-<Card sx={{ maxWidth: 345, margin: '20px' }}>
+<Card sx={{ maxWidth: 345, margin: '20px' }} className="cardAnimation1">
    
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
@@ -99,7 +96,7 @@ console.log(favorites)
         </Typography>
       </CardContent>
     </Card>
-    <Card sx={{ maxWidth: 345, margin: '20px' }}>
+    <Card sx={{ maxWidth: 345, margin: '20px' }} className="cardAnimation2">
    
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
@@ -111,7 +108,7 @@ console.log(favorites)
         </Typography>
       </CardContent>
     </Card>
-    <Card sx={{ maxWidth: 345, margin: '20px' }}>
+    <Card sx={{ maxWidth: 345, margin: '20px' }} className="cardAnimation3">
    
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
