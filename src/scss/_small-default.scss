@@ -19,9 +19,9 @@ header, .containerAll, .landingPage, main, footer {font-family: "lato"; margin: 
 
 .cardAnimation1 {
 animation-name: card-animation-1; 
-animation-duration: 10s; 
+animation-duration: 2s; 
 animation-iteration-count: infinite;
-
+position: relative; 
 
 }
 
@@ -29,14 +29,11 @@ animation-iteration-count: infinite;
 
 @keyframes card-animation-1 {
 
-    0%   {background-color: red; color: white;}
-    5%  {background-color: yellow; color: white;}
-    10%  {background-color: blue; color: white;}
-    15% {background-color: green; color: white;}
-    20%   {background-color: red; color: white;}
-    25%  {background-color: yellow; color: white;}
-    30%  {background-color: blue; color: white;}
-    35% {background-color: green; color: white;}
+    0%   {background-color: red;  left: 0px;}
+    50%  {background-color: yellow;  left: -50px;}
+    100%  {background-color: blue;  left: 0px;}
+  
+   
 
 
 
@@ -69,6 +66,7 @@ position: relative;
 
 .cardAnimation3 {
     animation-name: card-animation-3;
+    animation-duration: 2s; 
     animation-direction: reverse; 
 animation-iteration-count: infinite;
 position: relative; 
@@ -78,9 +76,9 @@ position: relative;
 
 @keyframes card-animation-3 {
 
-    0%   {left: 0px;}
-    50%  {left: 50px; }
-    100%  {left: 0px;}
+    0%   {background-color: red; left: 0px;}
+    50%  {background-color: yellow; left: 50px; }
+    100%  {background-color: blue; left: 0px;}
   
 
 

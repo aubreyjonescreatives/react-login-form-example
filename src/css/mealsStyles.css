@@ -95,34 +95,20 @@ header, .containerAll, .landingPage, main, footer {
 
 .cardAnimation1 {
   animation-name: card-animation-1;
-  animation-duration: 10s;
-  animation-iteration-count: infinite; }
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  position: relative; }
 
 @keyframes card-animation-1 {
   0% {
     background-color: red;
-    color: white; }
-  5% {
+    left: 0px; }
+  50% {
     background-color: yellow;
-    color: white; }
-  10% {
+    left: -50px; }
+  100% {
     background-color: blue;
-    color: white; }
-  15% {
-    background-color: green;
-    color: white; }
-  20% {
-    background-color: red;
-    color: white; }
-  25% {
-    background-color: yellow;
-    color: white; }
-  30% {
-    background-color: blue;
-    color: white; }
-  35% {
-    background-color: green;
-    color: white; } }
+    left: 0px; } }
 .cardAnimation2 {
   animation-name: card-animation-2;
   animation-duration: 2s;
@@ -139,16 +125,20 @@ header, .containerAll, .landingPage, main, footer {
     top: 0px; } }
 .cardAnimation3 {
   animation-name: card-animation-3;
+  animation-duration: 2s;
   animation-direction: reverse;
   animation-iteration-count: infinite;
   position: relative; }
 
 @keyframes card-animation-3 {
   0% {
+    background-color: red;
     left: 0px; }
   50% {
+    background-color: yellow;
     left: 50px; }
   100% {
+    background-color: blue;
     left: 0px; } }
 main {
   /* ------------------------Column----------------------------- */ }
