@@ -163,7 +163,7 @@ return (
         >
             <FacebookIcon
             sx={{ fontSize: 42, 
-            color: shareFB ? '$primaryColor' : '$secondaryColor'
+            color: shareFB ? '#E71D36' : 'purple'
             }}
             onClick={handleshareSocialClickFB}
             
@@ -174,7 +174,7 @@ return (
             <TwitterIcon 
              onClick={handleshareSocialClickT}
             sx={{ fontSize: 42, 
-            color: shareT ? '$primaryColor' : '#4C86A8'
+            color: shareT ? '#E71D36' : 'purple'
             
             }}
             />
@@ -182,7 +182,7 @@ return (
           <IconButton aria-label="settings">
             <InstagramIcon 
             sx={{ fontSize: 42, 
-                color: shareI ? '$primaryColor' : '#4C86A8'
+                color: shareI ? '#E71D36' : 'purple'
                 }}
                 onClick={handleshareSocialClickI}
             
@@ -190,8 +190,14 @@ return (
           </IconButton>
           <Button
          sx={{ fontSize: 24, 
-            color: 'white', 
-            bgcolor: '$primaryColor'
+           backgroundColor: 'purple', 
+           color: 'white',
+           "&:hover": {
+            backgroundColor: 'white', 
+            color: 'purple', 
+            border: '1px solid purple'
+          }, 
+            marginLeft: '40px'
             }}
             onClick={handlesocialSubmit}
           

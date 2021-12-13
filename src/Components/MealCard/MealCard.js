@@ -107,12 +107,12 @@ return (
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites" onClick={handleFavoriteClick}>
           <FavoriteIcon 
-          sx={{ color: favorite ? '#E71D36' : '#4C86A8'}}
+          sx={{ color: favorite ? '#E71D36' : 'purple'}}
           />
         </IconButton>
         <IconButton aria-label="share" onClick={handleShareMealClick}>
           <ShareIcon 
-          sx={{ color: shareMeal ? '#E71D36' : '#4C86A8'}}
+          sx={{ color: shareMeal ? '#E71D36' : 'purple'}}
           />
         </IconButton>
      

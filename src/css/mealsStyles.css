@@ -101,13 +101,13 @@ header, .containerAll, .landingPage, main, footer {
 
 @keyframes card-animation-1 {
   0% {
-    background-color: red;
+    background-color: green;
     left: 0px; }
   50% {
-    background-color: yellow;
+    background-color: purple;
     left: -50px; }
   100% {
-    background-color: blue;
+    background-color: yellow;
     left: 0px; } }
 .cardAnimation2 {
   animation-name: card-animation-2;
@@ -132,13 +132,13 @@ header, .containerAll, .landingPage, main, footer {
 
 @keyframes card-animation-3 {
   0% {
-    background-color: red;
+    background-color: green;
     left: 0px; }
   50% {
-    background-color: yellow;
+    background-color: purple;
     left: 50px; }
   100% {
-    background-color: blue;
+    background-color: yellow;
     left: 0px; } }
 main {
   /* ------------------------Column----------------------------- */ }
