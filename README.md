@@ -219,6 +219,48 @@ CSS Animation:
 
 This transform:translate3D expands a card on hover to make it look clickable. And it sure is clickable to find more information. 
 
+I also added in CSS Keyframes for additional animation. I could change practically anything, to include movement and color. Here is an example of what that looks like on the user dashboard page: 
+
+
+![CSS Animation](src/images/animation.PNG)
+
+
+
+Transition Component Animation: 
+
+```
+
+ <Transition in={inProp} timeout={duration}>
+     {state => (
+       <div style={{
+         ...mainStyle, 
+         ...transitionStyles[state]
+       }}>
+  <Card sx={{ maxWidth: 345, margin: '20px' }} className="cardAnimation2">
+   
+   <CardContent>
+     <Typography gutterBottom variant="h5" component="div">
+       Account Privacy
+     </Typography>
+     <Typography variant="body2" color="text.secondary">
+       Learn more about account privacy and the extreme measures we take to make sure 
+       your information is safe. 
+     </Typography>
+   </CardContent>
+ </Card>
+         </div>
+     )}
+     </Transition>
+
+
+
+
+
+```
+
+Here is part of the example I have for the Transition component. It adjusts its styling by the click of a button! 
+
+
 
 8. Connect to a server using Netlify functions and display retrieved data including at least 5 item details (accessed by details route) in your UI.
 
