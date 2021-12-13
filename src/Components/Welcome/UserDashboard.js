@@ -7,6 +7,25 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography'; 
 import { useMealContext } from '../../contexts/MealContext';
 import MealCard from '../MealCard/MealCard';
+import { Transition } from 'react-transition-group'; 
+import Button from '@mui/material/Button';
+
+
+const duration = 50; 
+
+const mainStyle = {
+  transition: `opacity ${duration}ms ease-in-out`,
+  opacity: 0,
+}
+
+const transitionStyles = {
+  entering: { opacity: 1 },
+  entered:  { opacity: 1 },
+  exiting:  { opacity: 0 },
+  exited:  { opacity: 0 },
+};
+
+
 
 const style = {
   margin: '50px 10px',
@@ -27,6 +46,8 @@ const style = {
 
 const UserDashboard = () => {
  
+
+  const [inProp, setInProp] = React.useState(false); 
   const [findFavorites, setfindFavorites] = React.useState([])
   const {allMeals, favorites} = useMealContext()
 
@@ -96,18 +117,31 @@ console.log(favorites)
         </Typography>
       </CardContent>
     </Card>
-    <Card sx={{ maxWidth: 345, margin: '20px' }} className="cardAnimation2">
+
+
+   <Transition in={inProp} timeout={duration}>
+     {state => (
+       <div style={{
+         ...mainStyle, 
+         ...transitionStyles[state]
+       }}>
+  <Card sx={{ maxWidth: 345, margin: '20px' }} className="cardAnimation2">
    
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Account Privacy
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          Learn more about account privacy and the extreme measures we take to make sure 
-          your information is safe. 
-        </Typography>
-      </CardContent>
-    </Card>
+   <CardContent>
+     <Typography gutterBottom variant="h5" component="div">
+       Account Privacy
+     </Typography>
+     <Typography variant="body2" color="text.secondary">
+       Learn more about account privacy and the extreme measures we take to make sure 
+       your information is safe. 
+     </Typography>
+   </CardContent>
+ </Card>
+         </div>
+     )}
+     </Transition>
+
+
     <Card sx={{ maxWidth: 345, margin: '20px' }} className="cardAnimation3">
    
       <CardContent>
@@ -134,6 +168,8 @@ console.log(favorites)
 
 
     </Box>
+
+    <Button onClick={() => setInProp(true)}>Where is the Missing Card?</Button>
 
 
 
