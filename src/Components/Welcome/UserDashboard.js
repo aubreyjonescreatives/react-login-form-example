@@ -42,6 +42,21 @@ const style = {
    
    }
 
+   const buttonStyle = {
+     display: 'block', 
+     margin: '100px auto', 
+     textAlign: 'center', 
+     padding: '10px', 
+     backgroundColor: 'purple',
+     color: 'white',  
+     "&:hover": {
+       backgroundColor: 'white', 
+       color: 'purple', 
+       border: '1px solid purple'
+     }
+     
+   }
+
 
 
 const UserDashboard = () => {
@@ -169,7 +184,7 @@ console.log(favorites)
 
     </Box>
 
-    <Button onClick={() => setInProp(true)}>Where is the Missing Card?</Button>
+    <Button sx={buttonStyle} onClick={() => setInProp(true)}>Where is the Missing Card?</Button>
 
 
 
