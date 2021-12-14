@@ -11,20 +11,6 @@ import { Transition } from 'react-transition-group';
 import Button from '@mui/material/Button';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
-const duration = 50; 
-
-const mainStyle = {
-  transition: `opacity ${duration}ms ease-in-out`,
-  opacity: 0,
-}
-
-const transitionStyles = {
-  entering: { opacity: 1 },
-  entered:  { opacity: 1 },
-  exiting:  { opacity: 0 },
-  exited:  { opacity: 0 },
-};
-
 
 
 const style = {
@@ -42,28 +28,12 @@ const style = {
    
    }
 
-   const buttonStyle = {
-     display: 'block', 
-     margin: '100px auto', 
-     textAlign: 'center', 
-     padding: '10px', 
-     backgroundColor: 'purple',
-     color: 'white',  
-     "&:hover": {
-       backgroundColor: 'white', 
-       color: 'purple', 
-       border: '1px solid purple'
-     }
-     
-   }
-
+  
 
 
 const FavoritesPage = () => {
  
-
-  const [inProp, setInProp] = React.useState(false); 
-  const [findFavorites, setfindFavorites] = React.useState([])
+ const [findFavorites, setfindFavorites] = React.useState([])
   const {allMeals, favorites} = useMealContext()
 
 console.log(favorites)
@@ -71,7 +41,7 @@ console.log(favorites)
 
   React.useEffect(() => {
     setfindFavorites((prevState) => {
-      const finds = allMeals.filter((mealInfo) => favorites.includes(mealInfo.idMeal))
+      const finds = allMeals.filter((meal) => favorites.includes(meal.idMeal))
       console.log(finds)
       return [...prevState, ...finds]
     })

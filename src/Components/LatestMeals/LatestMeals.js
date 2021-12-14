@@ -28,8 +28,8 @@ const style = {
 
 const LatestMeals = () => {
 
-
-
+ 
+ 
 
 const [open, setOpen] = React.useState(false)
 const handleOpen = () => setOpen(true)
@@ -38,9 +38,23 @@ const [shareFB, setshareFB] = React.useState(false)
 const [shareT, setshareT] = React.useState(false)
 const [shareI, setshareI] = React.useState(false)
 
-const { allMeals } = useMealContext()
+
+const [findFavorites, setfindFavorites] = React.useState([])
+const {allMeals, favorites} = useMealContext()
+
+console.log(favorites)
 
 console.log(allMeals)
+
+
+React.useEffect(() => {
+  setfindFavorites((prevState) => {
+    const finds = allMeals.filter((meal) => favorites.includes(meal.idMeal))
+    console.log(finds)
+    return [...prevState, ...finds]
+  })
+  
+}, [favorites, allMeals])
 
 
 
@@ -206,7 +220,32 @@ return (
        
       </Modal>
 
+      </Container>
+
+      <h1 className="m-c-header">Favorite Meals</h1>
+
+
+      <Container className="containerAll">
+{findFavorites.map((meal) => {
+    return (
+
+        
+       
+        <MealCard
+        key={meal.idMeal}
+        meal={{...meal}}
+      
+        />
+        
+    )
+    
+})}
+
+
+
+
 </Container>
+
 
 
 
